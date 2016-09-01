@@ -24,3 +24,13 @@ Route::group(['prefix' => 'admin','middleware'=>'login'],function () {
 });
 
 
+Route::get('index/index','Index\IndexController@index');//前台首页
+Route::get('index/contacts','Index\IndexController@contacts');
+Route::get('index/offers','Index\IndexController@offers');
+Route::get('index/book','Index\IndexController@book');
+Route::get('index/services','Index\IndexController@services');
+Route::get('index/safe','Index\IndexController@safe');
+Route::get('index/books','Index\IndexController@books');
+
+
+
