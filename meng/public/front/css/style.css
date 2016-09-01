@@ -33,7 +33,7 @@ header {height:230px;width:100%;overflow:hidden;background:url(../images/bg_top.
 .nav1 {background:url(../images/img_top1.gif) center 0 no-repeat}
 .nav2 {background:url(../images/img_top2.gif) center 0 no-repeat}
 .nav3 {background:url(../images/img_top3.gif) center 0 no-repeat}
-#menu {padding:27px 0 0 42px}
+#menu {padding:27px 0 0 10px}
 #menu li {float:left;margin-left:-1px;background:url(../images/menu_line.gif) bottom right no-repeat}
 #menu .end {background:none}
 #menu li a {display:block;height:71px;font-size:26px;line-height:71px;color:#fff;text-decoration:none;letter-spacing:-1px}
@@ -57,7 +57,7 @@ header {height:230px;width:100%;overflow:hidden;background:url(../images/bg_top.
 /* tabs begin */
 .tabs {position:relative}
 .tabs ul.nav {position:absolute;top:0}
-.tabs ul.nav li {float:left;padding-right:1px;width:95px}
+.tabs ul.nav li {float:left;padding-right:1px;width:50px}
 .tabs ul.nav .end {padding-right:0}
 .tabs ul.nav li a {color:#fff;text-align:center;display:block;background:url(../images/tabs.gif) 0 0 repeat-x #30c1fd;line-height:42px;text-decoration:none;border-radius:6px 6px 0 0;-moz-border-radius:6px 6px 0 0;-webkit-border-radius:6px 6px 0 0; box-shadow:0 0 3px #d0d0d0;-moz-box-shadow:0 0 3px #d0d0d0;-webkit-box-shadow:0 0 3px #d0d0d0;position:relative;overflow:hidden}
 .tabs ul.nav li a:hover, .tabs ul.nav .selected a {color:#000;background:url(../images/tabs_active.gif) top repeat-x #e7e6e6}
