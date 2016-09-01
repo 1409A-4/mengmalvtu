@@ -13,46 +13,46 @@
 		<div class="wrapper pad1">
 			<article class="col1">
 				<div class="box1">
-					<h2 class="top">Hot Offers of the Week</h2>
+					<h2 class="top">本周热门价格</h2>
 					<div class="pad">
-						<strong>Birmingham</strong><br>
+						<strong>伯明翰</strong><br>
 						<ul class="pad_bot1 list1">
-							<li><span class="right color1">from GBP 143.-</span><a href="{{URL('books')}}">Zurich</a></li>
+							<li><span class="right color1">from GBP 143.-</span><a href="{{URL('books')}}">苏黎世</a></li>
 						</ul>
-						<strong>London (LCY)</strong><br>
+						<strong>伦敦（lcy）</strong><br>
 						<ul class="pad_bot1 list1">
-							<li><span class="right color1">from GBP 176.-</span><a href="{{URL('books')}}">Geneva</a></li>
-							<li><span class="right color1">from GBP 109.-</span><a href="{{URL('books')}}">Zurich</a></li>
+							<li><span class="right color1">from GBP 176.-</span><a href="{{URL('books')}}">日内瓦</a></li>
+							<li><span class="right color1">from GBP 109.-</span><a href="{{URL('books')}}">苏黎世</a></li>
 						</ul>
-						<strong>London (LHR)</strong><br>
+						<strong>伦敦（lcy）</strong><br>
 						<ul class="pad_bot2 list1">
-							<li><span class="right color1">from GBP 100.-</span><a href="{{URL('books')}}">Geneva</a></li>
-							<li><span class="right color1">from GBP 112.-</span><a href="{{URL('books')}}">Zurich</a></li>
-							<li><span class="right color1">from GBP 88.-</span><a href="{{URL('books')}}">Basel</a></li>
+							<li><span class="right color1">from GBP 100.-</span><a href="{{URL('books')}}">日内瓦</a></li>
+							<li><span class="right color1">from GBP 112.-</span><a href="{{URL('books')}}">苏黎世</a></li>
+							<li><span class="right color1">from GBP 88.-</span><a href="{{URL('books')}}">巴塞尔</a></li>
 						</ul>
-						<strong>Manchester</strong><br>
+						<strong>曼彻斯特</strong><br>
 						<ul class="pad_bot2 list1">
-							<li><span class="right color1">from GBP 97.-</span><a href="{{URL('books')}}">Basel</a></li>
-							<li><span class="right color1">from GBP 103.-</span><a href="{{URL('books')}}">Zurich</a></li>
+							<li><span class="right color1">from GBP 97.-</span><a href="{{URL('books')}}">巴塞尔</a></li>
+							<li><span class="right color1">from GBP 103.-</span><a href="{{URL('books')}}">苏黎世</a></li>
 						</ul>
-						<strong>Edinburgh</strong><br>
+						<strong>爱丁堡</strong><br>
 						<ul class="pad_bot2 list1">
-							<li><span class="right color1">from GBP 165.-</span><a href="{{URL('books')}}">Zurich</a></li>
+							<li><span class="right color1">from GBP 165.-</span><a href="{{URL('books')}}">苏黎世</a></li>
 						</ul>
-						<strong>Birmingham</strong><br>
+						<strong>伯明翰</strong><br>
 						<ul class="pad_bot1 list1">
-							<li><span class="right color1">from GBP 143.-</span><a href="{{URL('books')}}">Zurich</a></li>
+							<li><span class="right color1">from GBP 143.-</span><a href="{{URL('books')}}">苏黎世</a></li>
 						</ul>
-						<strong>London (LCY)</strong><br>
+						<strong>伦敦（lcy）</strong><br>
 						<ul class="pad_bot1 list1">
-							<li><span class="right color1">from GBP 176.-</span><a href="{{URL('books')}}">Geneva</a></li>
-							<li><span class="right color1">from GBP 109.-</span><a href="{{URL('books')}}">Zurich</a></li>
+							<li><span class="right color1">from GBP 176.-</span><a href="{{URL('books')}}">日内瓦</a></li>
+							<li><span class="right color1">from GBP 109.-</span><a href="{{URL('books')}}">苏黎世</a></li>
 						</ul>
-						<strong>London (LHR)</strong><br>
+						<strong>伦敦（lhg）</strong><br>
 						<ul class="pad_bot2 list1">
-							<li><span class="right color1">from GBP 100.-</span><a href="{{URL('books')}}">Geneva</a></li>
-							<li><span class="right color1">from GBP 112.-</span><a href="{{URL('books')}}">Zurich</a></li>
-							<li><span class="right color1">from GBP 88.-</span><a href="{{URL('books')}}">Basel</a></li>
+							<li><span class="right color1">from GBP 100.-</span><a href="{{URL('books')}}">日内瓦</a></li>
+							<li><span class="right color1">from GBP 112.-</span><a href="{{URL('books')}}">苏黎世</a></li>
+							<li><span class="right color1">from GBP 88.-</span><a href="{{URL('books')}}">巴塞尔</a></li>
 						</ul>
 					</div>
 				</div>
@@ -60,9 +60,9 @@
 			<article class="col2">
 					<div class="tabs2">
 							<ul class="nav">
-								<li class="selected"><a href="#Flight">Flight</a></li>
-								<li><a href="#Hotel">Hotel</a></li>
-								<li class="end"><a href="#Rental">Rental</a></li>
+								<li class="selected"><a href="#Flight">航班</a></li>
+								<li><a href="#Hotel">旅店</a></li>
+								<li class="end"><a href="#Rental">租金</a></li>
 							</ul>
 							<div class="content">
 								<div class="tab-content" id="Flight">
@@ -71,37 +71,37 @@
 											<div class="radio">
 												<div class="wrapper">
 													 <input type="radio" name="name1" checked>
-													 <span class="left">Show prices</span>
+													 <span class="left">显示价格</span>
 													 <input type="radio" name="name1">
-													 <span class="left">Show flights</span>
+													 <span class="left">显示航班</span>
 												</div>
 											</div>
 											<div class="pad">
 												<div class="wrapper under">
 													<div class="col1">
-														<div class="row"><span class="left">From</span>
+														<div class="row"><span class="left">出发地</span>
 															<input type="text" class="input">
 															<a href="#" class="help"></a>
 														</div>
-														<div class="row"><span class="left">To</span>
+														<div class="row"><span class="left">目的地</span>
 															<input type="text" class="input">
 															<a href="#" class="help"></a>
 														</div>
 													</div>
 													<div class="check_box">
 														<input type="checkbox">
-														<span>One way</span>
+														<span>第一种方式</span>
 														<a href="#" class="help"></a>
 													</div>
 													<div class="check_box">
 														<input type="checkbox">
-														<span>Direct flights</span>
+														<span>直达航班</span>
 													</div>
 												</div>
 												<div class="wrapper under">
-													<span class="left">Flights</span>
+													<span class="left">航班</span>
 													<div class="cols marg_right1">
-														<h6>Outbound flight</h6>
+														<h6>出港航班</h6>
 														<div class="row">
 															<input type="text" class="input1" value="03.05.2011"  onblur="if(this.value=='') this.value='03.05.2011'" onFocus="if(this.value =='03.05.2011' ) this.value=''">
 															<input type="text" class="input1" value="+/- 0 Days"  onblur="if(this.value=='') this.value='+/- 0 Days'" onFocus="if(this.value =='+/- 0 Days' ) this.value=''">
@@ -170,7 +170,7 @@
 														</div>
 													</div>
 													<div class="cols">
-														<h5>Outbound flight</h5>
+														<h5>出港航班</h5>
 														<div class="row">
 															<input type="text" class="input1" value="03.05.2011"  onblur="if(this.value=='') this.value='03.05.2011'" onFocus="if(this.value =='03.05.2011' ) this.value=''">
 															<input type="text" class="input1" value="+/- 0 Days"  onblur="if(this.value=='') this.value='+/- 0 Days'" onFocus="if(this.value =='+/- 0 Days' ) this.value=''">
@@ -240,24 +240,24 @@
 													</div>
 												</div>
 												<div class="wrapper pad_bot1">
-													<span class="left">Passengers</span>
+													<span class="left">乘客</span>
 													<div class="cols marg_right1">
 														<div class="row">
 															<input type="text" class="input2" value="2"  onblur="if(this.value=='') this.value='2'" onFocus="if(this.value =='2' ) this.value=''">
-															<span class="left">Adults</span>
+															<span class="left">成人</span>
 															<a href="#" class="help"></a>
 														</div>
 														<div class="row">
 															<input type="text" class="input2" value="0"  onblur="if(this.value=='') this.value='0'" onFocus="if(this.value =='0' ) this.value=''">
-															<span class="left">Children</span>
+															<span class="left">儿童</span>
 															<a href="#" class="help"></a>
 														</div>
 													</div>
 													<div class="cols">
-														<div class="select1"><span class="left">Class</span><select><option>Economy</option></select>
+														<div class="select1"><span class="left">机舱</span><select><option>经济</option></select>
 															<a href="#" class="help"></a>
 														</div>
-														<div class="select1"><span class="left">Airline</span><select><option>Airlines</option></select>
+														<div class="select1"><span class="left">航空公司</span><select><option>航班</option></select>
 															<a href="#" class="help"></a>
 														</div>
 													</div>
@@ -273,9 +273,9 @@
 											<div class="radio">
 												<div class="wrapper">
 													 <input type="radio" name="name1" checked>
-													 <span class="left">Show prices</span>
+													 <span class="left">显示价格</span>
 													 <input type="radio" name="name1">
-													 <span class="left">Show flights</span>
+													 <span class="left">显示航班</span>
 												</div>
 											</div>
 											<div class="pad">
@@ -470,8 +470,8 @@
 										<div>
 											<div class="radio">
 												<div class="wrapper">
-													 <input type="radio" name="name1" checked><span class="left">Show prices</span>
-													 <input type="radio" name="name1"><span class="left">Show flights</span>
+													 <input type="radio" name="name1" checked><span class="left">显示价格</span>
+													 <input type="radio" name="name1"><span class="left">显示航班</span>
 												</div>
 											</div>
 											<div class="pad">
