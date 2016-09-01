@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index/front/index');
 });
 Route::get('admin/login', 'Admin\LoginCoontroller@loadLogin');//登录路由
 Route::post('admin/checklogin', 'Admin\LoginCoontroller@checkLogin');//验证登录
@@ -22,5 +22,15 @@ Route::group(['prefix' => 'admin','middleware'=>'login'],function () {
     Route::get('logout', 'Admin\LoginCoontroller@Logout');//退出登录
     Route::get('logout', 'Admin\LoginCoontroller@Logout');//修改密码
 });
+
+
+Route::get('index/index','Index\IndexController@index');//前台首页
+Route::get('index/contacts','Index\IndexController@contacts');
+Route::get('index/offers','Index\IndexController@offers');
+Route::get('index/book','Index\IndexController@book');
+Route::get('index/services','Index\IndexController@services');
+Route::get('index/safe','Index\IndexController@safe');
+Route::get('index/books','Index\IndexController@books');
+
 
 
