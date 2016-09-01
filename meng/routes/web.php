@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index/front/index');
 });
 Route::get('admin/login', 'Admin\LoginCoontroller@loadLogin');//登录路由
 Route::post('admin/checklogin', 'Admin\LoginCoontroller@checkLogin');//验证登录
