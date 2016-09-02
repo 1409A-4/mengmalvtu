@@ -171,76 +171,31 @@
 					</div>
 				</div>
 		<div class="wrapper pad1">
-			<article class="col1">
-				<div class="box1">
-							<h2 class="top">推荐旅游圣地</h2>
-							<div class="pad">
-								<strong>地区</strong><br>
-								<ul class="pad_bot1 list1">
-									<li>
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景区</a>
-									</li>
-								</ul>
-								<strong>地区</strong><br>
-								<ul class="pad_bot1 list1">
-									<li>
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景区</a>
-									</li>
-									<li>
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景区</a>
-									</li>
-								</ul>
-								<strong>地区</strong><br>
-								<ul class="pad_bot2 list1">
-									<li>
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景区</a>
-									</li>
-									<li>
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景区</a>
-									</li>
-									<li>
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景区</a>
-									</li>
-								</ul>
-							</div>
-							<h2>热门景点</h2>
-							<div class="pad">
-								<strong>地点</strong><br>
-								<ul class="pad_bot2 list1">
-									<li class="pad_bot1">
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景区</a>
-									</li>
-									<li class="pad_bot1">
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景区</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</article>
-					<article class="col2">
-						<h3>我们的航空公司<span>About Our Airlines</span></h3>
-						<div class="wrapper">
-							<article class="cols">
-								<figure><img src="images/page1_img1.jpg" alt="" class="pad_bot2"></figure>
-								<p class="pad_bot1"><strong>航空公司是 <a href="http://blog.templatemonster.com/free-website-templates/" target="_blank">The four group</a> created  team.</strong></p>
-								<p>The way you choose, don't say tired &nbsp;&nbsp;<a href="{{URL('index')}}">About</a>, <a href="{{URL('offers')}}">Offers</a>, <a href="{{URL('book')}}">Book</a>, <a href="{{URL('services')}}">Services</a>, <a href="{{URL('safe')}}">Safety</a>, <a href="{{URL('contacts')}}">Contacts</a>.</p>
-							</article>
-							<article class="cols pad_left1">
-								<figure><img src="images/page1_img2.jpg" alt="" class="pad_bot2"></figure>
-								<p class="pad_bot1"><strong>这家 <a href="http://blog.templatemonster.com/2011/05/09/free-website-template-airlines/" target="_blank">The four group航空公司</a> is very good.</strong></p>
-								<p>Hard work, hard work</p>
-							</article>
-						</div>
-						<a href="#" class="button1"><strong>Read More</strong></a>
-					</article>
+			<article class="col">
+				<h3 class="pad_top1">特价景区</h3>
+				<div class="wrapper pad_bot3">
+					<table>
+						<tr>
+							<td><img src="images/page2_img1.jpg" alt=""></td>
+							<td><img src="images/page2_img1.jpg" alt=""></td>
+							<td><img src="images/page2_img1.jpg" alt=""></td>
+						</tr>
+					</table>
+
+				</div>
+				<h3>酒店优惠</h3>
+				<div class="wrapper pad_bot3">
+					<figure class="left marg_right1"><img src="images/page2_img2.jpg" alt=""></figure>
+				</div>
+				<h3>特价机票</h3>
+				<div class="wrapper pad_bot3">
+					<figure class="left marg_right1"><img src="images/page2_img3.jpg" alt=""></figure>
+				</div>
+				<h3>国际租车</h3>
+				<div class="wrapper">
+					<figure class="left marg_right1"><img src="images/page2_img3.jpg" alt=""></figure>
+				</div>
+			</article>
 				</div>
 			</section>
 			<!--content end-->

@@ -165,7 +165,7 @@ a.jqTransformSelectOpen {display:block;position:absolute;top:0px;right:0px;width
 #form_3 .jqTransformSelectWrapper {float:left;width:128px !important}
 #form_3 .jqTransformSelectWrapper span {float:left;width:119px !important}
 #form_3 .pad_left1 {padding-left:32px}
-#form_3 .select1 {height:30px}
+/*#form_3 .select1 {height:30px}*/
 #form_3 .select1 .jqTransformSelectWrapper {float:left;width:221px !important}
 #form_3 .select1 .jqTransformSelectWrapper span {float:left;width:212px !important}
 #form_3 .right.relative {margin-top:9px;margin-right:32px}
@@ -175,7 +175,7 @@ a.jqTransformSelectOpen {display:block;position:absolute;top:0px;right:0px;width
 #form_4 .row {min-height:25px;width:100%;overflow:hidden}
 #form_4 .left {width:95px;padding-left:31px}
 #form_4 .input, #form_4 .input1, #form_4 .input2 {background:#fff;border:1px solid #e5e5e5;font:12px Arial, Helvetica, sans-serif;color:#7f7f7f;float:left;padding:2px 7px;height:14px;width:111px !important}
-#form_4 .input1 {width:65px !important}
+#form_4 .input1 {width:60px !important}
 #form_4 .input2 {width:11px !important}
 #form_4 .col1 {width:177px;padding-left:0}
 #form_4 .marg_top1 {margin-top:12px}
@@ -187,7 +187,7 @@ a.jqTransformSelectOpen {display:block;position:absolute;top:0px;right:0px;width
 .form_5 .row {min-height:25px;width:100%;overflow:hidden}
 .form_5 .left {width:74px}
 .form_5 .input, .form_5 .input1, .form_5 .input2 {background:#fff;border:1px solid #e5e5e5;font:12px Arial, Helvetica, sans-serif;color:#7f7f7f;float:left;padding:2px 7px;height:14px;width:112px !important}
-.form_5 .input1 {width:100px !important;margin-right:6px}
+.form_5 .input1 {width:60px !important;margin-right:6px}
 .form_5 .input2 {width:11px !important}
 .form_5 .col1 {width:247px;padding-left:0}
 .form_5 .check_box {padding-left:20px;float:left;padding-top:25px}

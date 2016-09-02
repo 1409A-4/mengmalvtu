@@ -37,7 +37,7 @@
 											</div>
 											<div class="row">
 												<span class="left">返回航班</span>
-												<input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="backtime">
+												<input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="gotime">
 											</div>
 											<div class="row">
 												<span class="left">成人</span>
@@ -145,7 +145,7 @@
 							</ul>
 							</div>
 						</div>
-						<h3>从那到那</h3>
+						<h3>酒店优惠</h3>
 						<div class="wrapper pad_bot3">
 							<figure class="left marg_right1"><img src="images/page2_img2.jpg" alt=""></figure>
 							<div class="cols">
@@ -171,24 +171,9 @@
 									<a href="{{URL('books')}}">景区</a>
 								</li>
 							</ul>
-							<h4>来自某地区</h4>
-							<ul class="list1">
-								<li>
-									<span class="color1 right">价格</span>
-									<a href="{{URL('books')}}">景区</a>
-								</li>
-								<li>
-									<span class="color1 right">价格</span>
-									<a href="{{URL('books')}}">景区</a>
-								</li>
-								<li>
-									<span class="color1 right">价格</span>
-									<a href="{{URL('books')}}">景区</a>
-								</li>
-							</ul>
-							</div>
+								</div>
 						</div>
-						<h3>英国的洲际经济特</h3>
+						<h3>特价机票</h3>
 						<div class="wrapper">
 							<figure class="left marg_right1"><img src="images/page2_img3.jpg" alt=""></figure>
 							<div class="cols">
@@ -226,6 +211,47 @@
 									<a href="#">更多的优惠</a>
 								</li>
 							</ul>
+								订单由XX年XX月XX日至XX年XX月XX日之间旅行。
+							</div>
+						</div>
+						<h3>国际租车</h3>
+						<div class="wrapper">
+							<figure class="left marg_right1"><img src="images/page2_img3.jpg" alt=""></figure>
+							<div class="cols">
+								<h4>来自英国</h4>
+								<ul class="list1 pad_bot1">
+									<li>
+										<span class="color1 right">from GBP 464.-</span>
+										<a href="{{URL('books')}}">香港</a>
+									</li>
+									<li>
+										<span class="color1 right">from GBP 509.-</span>
+										<a href="{{URL('books')}}">约翰内斯堡</a>
+									</li>
+									<li>
+										<span class="color1 right">from GBP 601.-</span>
+										<a href="{{URL('books')}}">曼谷</a>
+									</li>
+									<li>
+										<span class="color1 right">from GBP 727.-</span>
+										<a href="{{URL('books')}}">保罗</a>
+									</li>
+									<li>
+										<span class="color1 right">from GBP 464.-</span>
+										<a href="{{URL('books')}}">苏黎世</a>
+									</li>
+									<li>
+										<span class="color1 right">from GBP 509.-</span>
+										<a href="{{URL('books')}}">日内瓦</a>
+									</li>
+									<li>
+										<span class="color1 right">from GBP 601.-</span>
+										<a href="{{URL('books')}}">巴塞尔</a>
+									</li>
+									<li>
+										<a href="#">更多的优惠</a>
+									</li>
+								</ul>
 								订单由XX年XX月XX日至XX年XX月XX日之间旅行。
 							</div>
 						</div>
