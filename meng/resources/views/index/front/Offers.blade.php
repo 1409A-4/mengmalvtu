@@ -9,6 +9,11 @@
 <div class="main">
 	@include('index.public.header')
 <!--content -->
+		<?php
+		date_default_timezone_set("PRC");
+		$nowtime = time();
+		$rq = date("Y-m-d",$nowtime);
+		?>
 	<section id="content">
 		<div class="wrapper pad1">
 			<article class="col1">
@@ -27,11 +32,12 @@
 											</div>
 											<div class="row">
 												<span class="left">出发航班</span>
-												<input type="text" class="input1" value="03.05.2011"  onblur="if(this.value=='') this.value='03.05.2011'" onFocus="if(this.value =='03.05.2011' ) this.value=''">
+												<input type="text" class="input1"  onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="gotime">
+
 											</div>
 											<div class="row">
 												<span class="left">返回航班</span>
-												<input type="text" class="input1" value="10.05.2011"  onblur="if(this.value=='') this.value='10.05.2011'" onFocus="if(this.value =='10.05.2011' ) this.value=''">
+												<input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="backtime">
 											</div>
 											<div class="row">
 												<span class="left">成人</span>

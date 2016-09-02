@@ -11,6 +11,7 @@
 <script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
 <script type="text/javascript" src="js/atooltip.jquery.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/mydate.js"></script>
 <![endif]-->
 <!--[if lt IE 7]>
 <div style=' clear: both; text-align:center; position: relative;'>
