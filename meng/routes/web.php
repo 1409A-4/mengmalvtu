@@ -16,21 +16,33 @@ Route::get('/', function () {
 });
 Route::get('admin/login', 'Admin\LoginCoontroller@loadLogin');//登录路由
 Route::post('admin/checklogin', 'Admin\LoginCoontroller@checkLogin');//验证登录
-Route::any('admin/verify/{rand}', 'Admin\LoginCoontroller@Verify');//验证码
 Route::group(['prefix' => 'admin','middleware'=>'login'],function () {
-    Route::get('index', 'Admin\IndexController@Index');//首页
-    Route::get('logout', 'Admin\LoginCoontroller@Logout');//退出登录
-    Route::get('logout', 'Admin\LoginCoontroller@Logout');//修改密码
 });
 
 
-Route::get('index/index','Index\IndexController@index');//前台首页
 Route::get('index/contacts','Index\IndexController@contacts');//前台客服  *联系我们
 Route::get('index/offers','Index\IndexController@offers');//前台优惠
 Route::get('index/book','Index\IndexController@book');//前台预约
 Route::get('index/services','Index\IndexController@services');//前台服务
 Route::get('index/safe','Index\IndexController@safe');//前台安全
 Route::get('index/books','Index\IndexController@books');//前台登记
+
+
+
+
+
+
+/*
+ *商户模块
+ */
+Route::group(['prefix' => 'business'],function () {
+Route::get('login', 'Business\LoginController@businessLogin');             //商户登录
+Route::post('login_pro', 'Business\LoginController@businessLogin_pro');    //商户登录验证
+Route::get('logout', 'Business\LoginController@businessLogout');           //商户退出
+Route::get('home', 'Business\IndexController@businessHome');               //商户大厅
+Route::post('add', 'Business\LoginController@businessAdd');                //商户入驻
+
+});
 
 
 
