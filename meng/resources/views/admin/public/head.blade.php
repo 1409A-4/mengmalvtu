@@ -6,7 +6,7 @@
         <nav id="topbar" role="navigation" style="margin-bottom: 0; z-index: 2;" class="navbar navbar-default navbar-static-top">
             <div class="navbar-header">
                 <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </button><a id="logo" href="index.html" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text pull-left"><font face="Algerian">Tourism</font></span><span style="display: none" class="logo-text-icon">µTourism</span></a>
+                </button><a id="logo" href="admin/index" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text pull-left"><font face="Algerian">Tourism</font></span><span style="display: none" class="logo-text-icon">µTourism</span></a>
             </div>
             <div class="topbar-main"><a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
                 <ul class="nav navbar-nav    ">
@@ -117,7 +117,7 @@
                 </form>
                 <ul class="nav navbar navbar-top-links navbar-right mbn">
                     <li class="dropdown topbar-user">
-                        <a data-hover="dropdown" href="admin/index/index" class="dropdown-toggle"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/48.jpg" alt="" class="img-responsive img-circle" />&nbsp;<span class="hidden-xs"><font face="Algerian">{{session('uname')}}</font></span>&nbsp;<span class="caret"></span>
+                        <a data-hover="dropdown" href="admin/index" class="dropdown-toggle"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/48.jpg" alt="" class="img-responsive img-circle" />&nbsp;<span class="hidden-xs"><font face="Algerian">{{session('uname')}}</font></span>&nbsp;<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-user pull-right">
                             <li><a href="admin/logout"><i class="fa fa-key"></i>退出</a>
@@ -220,33 +220,33 @@
                         </div>
                         <div class="clearfix"></div>
                     </li>
-                    <li><a href="admin/index/index"><i class="fa fa-tachometer fa-fw"><div class="icon-bg bg-orange"></div></i><span class="menu-title">首页</span></a>
+                    <li><a href="admin/index"><i class="fa fa-tachometer fa-fw"><div class="icon-bg bg-orange"></div></i><span class="menu-title">首页</span></a>
                     </li>
                     <li><a href="#" target="_blank"><i class="fa fa-user-md"><div class="icon-bg bg-orange"></div></i><span class="menu-title">用户管理</span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="admin/user/index"><i class="fa fa-rocket"></i><span class="submenu-title">用户添加</span></a>
+                            <li><a href="admin/loaduseradd"><i class="fa fa-rocket"></i><span class="submenu-title">用户添加</span></a>
                             </li>
                         </ul>
                         <ul class="nav nav-second-level">
-                            <li><a href="admin/user/show"><i class="fa fa-rocket"></i><span class="submenu-title">用户管理</span></a>
+                            <li><a href="admin/usershow"><i class="fa fa-rocket"></i><span class="submenu-title">用户管理</span></a>
                             </li>
                         </ul>
                     </li>
                     <li><a href="#"><i class="fa fa-laptop fa-fw"><div class="icon-bg bg-pink"></div></i><span class="menu-title">商品分类</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="admin/classify/index"><i class="fa fa-rocket"></i><span class="submenu-title">分类添加</span></a>
+                            <li><a href="admin/loadclassifyadd"><i class="fa fa-rocket"></i><span class="submenu-title">分类添加</span></a>
                             </li>
                         </ul>
                         <ul class="nav nav-second-level">
-                            <li><a href="admin/classify/show"><i class="fa fa-rocket"></i><span class="submenu-title">分类管理</span></a>
+                            <li><a href="admin/classifyshow"><i class="fa fa-rocket"></i><span class="submenu-title">分类管理</span></a>
                             </li>
                         </ul>
                     </li>
                     <li><a href="#"><i class="fa fa-desktop fa-fw"><div class="icon-bg bg-pink"></div></i><span class="menu-title">商品管理</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="admin/goods/index"><i class="fa fa-align-left"></i><span class="submenu-title">商品添加</span></a>
+                            <li><a href="admin/loadgoodsadd"><i class="fa fa-align-left"></i><span class="submenu-title">商品添加</span></a>
                             </li>
-                            <li><a href="admin/goods/show"><i class="fa fa-align-left"></i><span class="submenu-title">商品管理</span></a>
+                            <li><a href="admin/goodsshow"><i class="fa fa-align-left"></i><span class="submenu-title">商品管理</span></a>
                             </li>
                         </ul>
                     </li>
