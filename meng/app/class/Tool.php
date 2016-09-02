@@ -17,11 +17,11 @@ class Tool {
      */
     static public function tree(&$data,$pid = 0,$count = 1) {
         foreach ($data as $key => $value){
-            if($value['p_id']==$pid){
+            if($value['pid']==$pid){
                 $value['count'] = $count;
                 self::$treeList []=$value;
                 unset($data[$key]);
-                self::tree($data,$value['c_id'],$count+1);
+                self::tree($data,$value['nid'],$count+1);
             }
         }
         return self::$treeList ;

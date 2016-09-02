@@ -277,12 +277,16 @@ class ComposerStaticInit7fb81aceb8772aaaa410b0de365dec8c
     );
 
     public static $classMap = array (
+
         'Admin' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_061334_admin.php',
         'AdminRole' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_061411_admin_role.php',
         'Businesss' => __DIR__ . '/../..' . '/database/migrations/2016_09_02_065859_businesss.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateSessionsTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_054833_create_sessions_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
+
+        'AdminTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AdminTableSeeder.php',
+
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'FileUp' => __DIR__ . '/../..' . '/app/class/FileUp.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
@@ -356,7 +360,7 @@ class ComposerStaticInit7fb81aceb8772aaaa410b0de365dec8c
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
-        'Navigation' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_062217_navigation.php',
+        'Mengobj' => __DIR__ . '/../..' . '/database/migrations/2016_09_02_150645_mengobj.php',
         'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
@@ -727,13 +731,6 @@ class ComposerStaticInit7fb81aceb8772aaaa410b0de365dec8c
         'PHP_Token_XOR_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
-        'Power' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_061433_power.php',
-        'Role' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_061355_role.php',
-        'RoleBusiness' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_061509_role_business.php',
-        'RoleGoods' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_061527_role_goods.php',
-        'RoleGoodsimg' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_061551_role_goodsimg.php',
-        'RoleGoodslist' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_061609_role_goodslist.php',
-        'RolePower' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_061452_role_power.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',
@@ -816,7 +813,6 @@ class ComposerStaticInit7fb81aceb8772aaaa410b0de365dec8c
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
         'Tool' => __DIR__ . '/../..' . '/app/class/Tool.php',
-        'User' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_062200_user.php',
         'Verify' => __DIR__ . '/../..' . '/app/class/Verify.php',
         'Z' => __DIR__ . '/../..' . '/app/class/Z.php',
     );

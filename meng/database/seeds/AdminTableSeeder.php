@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class AdminTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
             'ubtime'=>date('Y-m-d H:i:s'),
             'uip'=>'::1',
         ]);
+
     }
 }

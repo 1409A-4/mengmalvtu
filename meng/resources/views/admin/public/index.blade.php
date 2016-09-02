@@ -37,29 +37,29 @@
                             <tbody>
                             <tr>
                                 <td width="50%">账户</td>
-                                <td><span class="label label-info">{{session('u_name')}}</span></td>
+                                <td><span class="label label-info">{{session('uname')}}</span></td>
                             </tr>
                             <tr>
                                 <td width="50%">邮箱</td>
-                                <td><span class="label label-pink"></span></td>
+                                <td><span class="label label-pink">{{$data->uemail}}</span></td>
                             </tr>
                             <tr>
                                 <td width="50%">注册时间</td>
-                                <td><span class="label label-primary"></span></td>
+                                <td><span class="label label-primary">{{$data->ubtime}}</span></td>
                             </tr>
                             <tr>
                                 <td width="50%">上次登录</td>
-                                <td><span class="label label-success"></span>
+                                <td><span class="label label-success">{{$data->uetime}}</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td width="50%">登录IP</td>
-                                <td><span class="label label-dark"></span></td>
+                                <td><span class="label label-dark">{{$data->uip}}</span></td>
                             </tr>
                             <tr>
                                 <td width="50%">状态</td>
                                 <td>
-                                    @if(1)
+                                    @if($data->ustatus==1)
                                         <span class="label label-success">正常</span>
                                         @else
                                         <span class="label label-danger">正常</span>
@@ -73,26 +73,32 @@
                         <div class="panel panel-yellow">
                             <div class="panel-heading">修改密码</div>
                             <div class="panel-body pan">
-                                <form action="admin/login/uppwd" class="form-horizontal" method="post">
+                                <form action="admin/setpwd" class="form-horizontal" method="post">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     <div class="form-body pal">
                                         <div class="form-group">
                                                 <div class="input-icon right"><i class="fa fa-lock"></i>
-                                                    <input id="inputPassword" type="password" placeholder="原密码"id="u_pwd" name="u_pwd" class="form-control" />
+                                                    <input id="inputPassword" type="password" placeholder="原密码"id="u_pwd" name="upwd" class="form-control" />
                                                 </div>
                                         </div>
                                     </div>
                                     <div class="form-body pal">
                                         <div class="form-group">
                                             <div class="input-icon right"><i class="fa fa-lock"></i>
-                                                <input id="inputPassword" type="password" placeholder="新密码"name="u_repwd" class="form-control" />
+                                                <input id="inputPassword" type="password" placeholder="新密码"name="urepwd" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-body pal">
+                                        <div class="form-group">
+                                            <div class="input-icon right"><i class="fa fa-lock"></i>
+                                                <input id="inputPassword" type="password" placeholder="确认新密码"name="urerepwd" class="form-control" />
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-actions pal">
                                         <div class="form-group mbn">
-
-                                                <button type="submit" class="btn btn-primary btn-block">确认修改</button>
+                                            <button type="submit" class="btn btn-primary btn-block">确认修改</button>
                                         </div>
                                     </div>
                                 </form>
@@ -114,6 +120,13 @@
     </div>
     <!--END CONTENT-->
 </div>
+<input type="hidden" name="message" value="{{session('message')}}" id="message">
 @include('admin.public.foot')
 </body>
 </html>
+<script>
+    var message=$('#message').val();
+    if(message!==""){
+        layer.msg(message, {icon:6 });
+    }
+</script>

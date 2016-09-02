@@ -69,4 +69,39 @@ class LoginCoontroller extends Controller
         $request->session()->flush();
         return redirect()->action('Admin\LoginCoontroller@loadLogin')->with(['message'=>'退出成功!']);
     }
+    /*
+     * 修改密码
+     * */
+    public function Setpwd(Request $request){
+        $data = $request->except('_token');
+        $rules = [
+            'upwd' => 'required',
+            'urepwd' => 'required|between:3,10',
+            'urerepwd' => "required|same:urepwd",
+        ];
+        $message = [
+            'upwd.required' => '原密码不能为空！',
+            'urepwd.required' => '新密码不能为空！',
+            'urepwd.between' => '密码长度必须在3到10位之间！',
+            'urerepwd.required' => '确认密码不能为空！',
+            'urerepwd.same' => '新密码与确认密码必须相同！'
+        ];
+        $validator = Validator::make($data, $rules, $message);
+        if ($validator->passes()) {
+            if($data['urepwd']==$data['upwd']){
+                return back()->with(['message'=>'修改成功！']);
+            }
+            if(Admin::where(['uid'=>session('uid'),'upwd'=>md5($data['upwd'])])->first()){
+                if(Admin::where(['uid'=>session('uid')])->update(['upwd'=>md5($data['urepwd'])])){
+                    return back()->with(['message'=>'修改成功！']);
+                }else{
+                    return back()->with(['message'=>'系统异常请联系管理员！']);
+                }
+            }else{
+                return back()->with(['message'=>'原密码错误！']);
+            }
+        } else {
+            return back()->withErrors($validator);
+        }
+    }
 }
