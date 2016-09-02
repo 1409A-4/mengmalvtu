@@ -10,6 +10,11 @@
 <div class="main">
 @include('index.public.header')
 <!--content -->
+	<?php
+		date_default_timezone_set("PRC");
+		$nowtime = time();
+		$rq = date("Y-m-d",$nowtime);
+	?>
 	<section id="content">
 		<div class="for_banners">
 			<article class="col1">
@@ -43,14 +48,13 @@
 												<div class="col1">
 													<div class="row">
 														<span class="left">出发时间</span>
-														<input type="text" class="input1" value="03.05.2011"  onblur="if(this.value=='') this.value='03.05.2011'" onFocus="if(this.value =='03.05.2011' ) this.value=''">
+														<input type="text" class="input1"  onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="starttime">
 													</div>
 													<div class="row">
 														<span class="left">返回时间</span>
-														<input type="text" class="input1" value="10.05.2011"  onblur="if(this.value=='') this.value='10.05.2011'" onFocus="if(this.value =='10.05.2011' ) this.value=''">
+														<input type="text" class="input1"  onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="endtime">
 													</div>
 												</div>
-												<input type="text" class="input1 marg_top1" value="+/- 0 Days"  onblur="if(this.value=='') this.value='+/- 0 Days'" onFocus="if(this.value =='+/- 0 Days' ) this.value=''">
 											</div>
 											<div class="row">
 												<span class="left">成人</span>
@@ -83,12 +87,12 @@
 											</div>
 											<div class="row">
 												<span class="left">入住  </span>
-												<input type="text" class="input1" value="03.05.2011"  onblur="if(this.value=='') this.value='03.05.2011'" onFocus="if(this.value =='03.05.2011' ) this.value=''">
+												<input type="text" class="input1"  onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="check_in_time">
 												<a href="#" class="help"></a>
 											</div>
 											<div class="row">
 												<span class="left">退房  </span>
-												<input type="text" class="input1" value="10.05.2011"  onblur="if(this.value=='') this.value='10.05.2011'" onFocus="if(this.value =='10.05.2011' ) this.value=''">
+												<input type="text" class="input1"  onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="check_out_time">
 												<a href="#" class="help"></a>
 											</div>
 											<div class="row">
@@ -129,13 +133,11 @@
 											</div>
 											<div class="row">
 												<span class="left">开始出租</span>
-												<input type="text" class="input1" value="03.05.2011"  onblur="if(this.value=='') this.value='03.05.2011'" onFocus="if(this.value =='03.05.2011' ) this.value=''">
-												<input type="text" class="input2" value="12:00"  onblur="if(this.value=='') this.value='12:00'" onFocus="if(this.value =='12:00' ) this.value=''">
+												<input type="text" class="input1"  onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="begin_time">
 											</div>
 											<div class="row">
 												<span class="left">返还出租</span>
-												<input type="text" class="input1" value="10.05.2011"  onblur="if(this.value=='') this.value='10.05.2011'" onFocus="if(this.value =='10.05.2011' ) this.value=''">
-												<input type="text" class="input2" value="12:00"  onblur="if(this.value=='') this.value='12:00'" onFocus="if(this.value =='12:00' ) this.value=''">
+												<input type="text" class="input1"  onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="back_time">
 											</div>
 											<div class="row_select">
 												<span class="left">英里 &amp; 更多</span>
@@ -143,8 +145,14 @@
 											</div>
 											<div class="row_select">
 												<div class="pad_left1">
-													居住地<br>
-													<div class="select1"><select><option>&nbsp;</option></select></div>
+													地区<br>
+													<div class="select1">
+														<select>
+															@foreach($list as $v)
+																<option><?php echo $v->region_name ?></option>
+																@endforeach
+														</select>
+													</div>
 												</div>
 											</div>
 											<div class="wrapper">
@@ -260,11 +268,11 @@
 		tabs.init();
 	});
 	jQuery(document).ready(function($) {
-		$('#form_1, #form_2, #form_3').jqTransform({imgPath:'jqtransformplugin/img/'});	
+		$('#form_1, #form_2, #form_3').jqTransform({imgPath:'jqtransformplugin/img/'});
 	});
 	$(window).load(function() {
 	$('#slider').nivoSlider({
-		effect:'fade', //Specify sets like: 'fold,fade,sliceDown, sliceDownLeft, sliceUp, sliceUpLeft, sliceUpDown, sliceUpDownLeft' 
+		effect:'fade', //Specify sets like: 'fold,fade,sliceDown, sliceDownLeft, sliceUp, sliceUpLeft, sliceUpDown, sliceUpDownLeft'
 		slices:15,
 		animSpeed:500,
 		pauseTime:6000,

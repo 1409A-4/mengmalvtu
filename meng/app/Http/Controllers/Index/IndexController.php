@@ -15,7 +15,8 @@ class IndexController extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     //前台首页
     public function index(){
-        return view('index/front/index');
+        $arr = DB::table("region")->where("parent_id",'=','1')->get();
+        return view('index/front/index',['list'=>$arr]);
     }
     public function new(){
         return view('index/front/new');

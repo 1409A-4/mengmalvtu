@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index/front/index');
-});
+//Route::get('/', function () {
+//    return view('index/front/index');
+//});
+Route::get('/','Index\IndexController@index');
+
 Route::get('admin/login', 'Admin\LoginCoontroller@loadLogin');//登录路由
 Route::post('admin/checklogin', 'Admin\LoginCoontroller@checkLogin');//验证登录
 Route::any('admin/verify/{rand}', 'Admin\LoginCoontroller@Verify');//验证码
@@ -31,6 +33,13 @@ Route::get('index/book','Index\IndexController@book');//前台预约
 Route::get('index/services','Index\IndexController@services');//前台服务
 Route::get('index/safe','Index\IndexController@safe');//前台安全
 Route::get('index/books','Index\IndexController@books');//前台登记
+
+//sphinx搜索
+Route::get('index/cesi','Index\SphinxController@cesi');//搜索sphinx
+
+//地区管理
+//Route::get('index/region','RegionController@region');//三级联动地区管理
+Route::post('index/getcity','Index\IndexController@getcity');//三级联动地区管理
 
 
 
