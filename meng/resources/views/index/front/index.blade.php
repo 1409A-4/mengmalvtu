@@ -15,9 +15,9 @@
 			<article class="col1">
 						<div class="tabs">
 							<ul class="nav">
-								<li class="selected"><a href="#Flight">Flight</a></li>
-								<li><a href="#Hotel">Hotel</a></li>
-								<li class="end"><a href="#Rental">Rental</a></li>
+								<li class="selected"><a href="#Flight">航班</a></li>
+								<li><a href="#Hotel">旅店</a></li>
+								<li class="end"><a href="#Rental">租赁</a></li>
 							</ul>
 							<div class="content">
 								<div class="tab-content" id="Flight">
@@ -26,38 +26,38 @@
 											<div class="radio">
 												<div class="wrapper">
 													 <input type="radio" name="name1" checked>
-													 <span class="left">Standard</span>
+													 <span class="left">标准</span>
 													 <input type="radio" name="name1">
-													 <span class="left">World Map</span>
+													 <span class="left">世界地图</span>
 												</div>
 											</div>
 											<div class="row">
-												<span class="left">From</span>
+												<span class="left">出发地</span>
 												<input type="text" class="input">
 											</div>
 											<div class="row">
-												<span class="left">To</span>
+												<span class="left">目的地</span>
 												<input type="text" class="input">
 											</div>
 											<div class="wrapper">
 												<div class="col1">
 													<div class="row">
-														<span class="left">Outbound</span>
+														<span class="left">出发时间</span>
 														<input type="text" class="input1" value="03.05.2011"  onblur="if(this.value=='') this.value='03.05.2011'" onFocus="if(this.value =='03.05.2011' ) this.value=''">
 													</div>
 													<div class="row">
-														<span class="left">Return</span>
+														<span class="left">返回时间</span>
 														<input type="text" class="input1" value="10.05.2011"  onblur="if(this.value=='') this.value='10.05.2011'" onFocus="if(this.value =='10.05.2011' ) this.value=''">
 													</div>
 												</div>
 												<input type="text" class="input1 marg_top1" value="+/- 0 Days"  onblur="if(this.value=='') this.value='+/- 0 Days'" onFocus="if(this.value =='+/- 0 Days' ) this.value=''">
 											</div>
 											<div class="row">
-												<span class="left">Adults</span>
+												<span class="left">成人</span>
 												<input type="text" class="input2" value="2"  onblur="if(this.value=='') this.value='2'" onFocus="if(this.value =='2' ) this.value=''">
 											</div>
 											<div class="row">
-												<span class="left">Children</span>
+												<span class="left">儿童</span>
 												<input type="text" class="input2" value="0"  onblur="if(this.value=='') this.value='0'" onFocus="if(this.value =='0' ) this.value=''">
 												<span class="pad_left1">(0-11 years)</span>
 											</div>
@@ -74,34 +74,34 @@
 											<div class="radio">
 												<div class="wrapper">
 													 <input type="checkbox" checked>
-													 Our Partners
+													合作伙伴
 												</div>
 											</div>
 											<div class="row">
-												<span class="left">Location</span>
+												<span class="left">位置</span>
 												<input type="text" class="input">
 											</div>
 											<div class="row">
-												<span class="left">Check-in  </span>
+												<span class="left">入住  </span>
 												<input type="text" class="input1" value="03.05.2011"  onblur="if(this.value=='') this.value='03.05.2011'" onFocus="if(this.value =='03.05.2011' ) this.value=''">
 												<a href="#" class="help"></a>
 											</div>
 											<div class="row">
-												<span class="left">Check-out  </span>
+												<span class="left">退房  </span>
 												<input type="text" class="input1" value="10.05.2011"  onblur="if(this.value=='') this.value='10.05.2011'" onFocus="if(this.value =='10.05.2011' ) this.value=''">
 												<a href="#" class="help"></a>
 											</div>
 											<div class="row">
-												<span class="left">Rooms</span>
+												<span class="left">房间</span>
 												<input type="text" class="input2" value="1"  onblur="if(this.value=='') this.value='1'" onFocus="if(this.value =='1' ) this.value=''">
 												<a href="#" class="help"></a>
 											</div>
 											<div class="row">
-												<span class="left">Adults</span>
+												<span class="left">成人</span>
 												<input type="text" class="input2" value="2"  onblur="if(this.value=='') this.value='2'" onFocus="if(this.value =='2' ) this.value=''">
 											</div>
 											<div class="row">
-												<span class="left">Children</span>
+												<span class="left">儿童</span>
 												<input type="text" class="input2" value="0"  onblur="if(this.value=='') this.value='0'" onFocus="if(this.value =='0' ) this.value=''">
 												<span class="pad_left1">(0-11 years)</span>
 											</div>
@@ -118,32 +118,32 @@
 											<div class="radio">
 												<div class="wrapper">
 													 <input type="radio" name="name2" checked>
-													 <span class="left">Avis</span>
+													 <span class="left">出租汽车</span>
 													 <input type="radio" name="name2">
-													 <span class="left">Europcar</span>
+													 <span class="left">汽车租赁</span>
 												</div>
 											</div>
 											<div class="row">
-												<span class="left">Rental location</span>
+												<span class="left">租金定位</span>
 												<input type="text" class="input">
 											</div>
 											<div class="row">
-												<span class="left">Pick-up</span>
+												<span class="left">开始出租</span>
 												<input type="text" class="input1" value="03.05.2011"  onblur="if(this.value=='') this.value='03.05.2011'" onFocus="if(this.value =='03.05.2011' ) this.value=''">
 												<input type="text" class="input2" value="12:00"  onblur="if(this.value=='') this.value='12:00'" onFocus="if(this.value =='12:00' ) this.value=''">
 											</div>
 											<div class="row">
-												<span class="left">Return</span>
+												<span class="left">返还出租</span>
 												<input type="text" class="input1" value="10.05.2011"  onblur="if(this.value=='') this.value='10.05.2011'" onFocus="if(this.value =='10.05.2011' ) this.value=''">
 												<input type="text" class="input2" value="12:00"  onblur="if(this.value=='') this.value='12:00'" onFocus="if(this.value =='12:00' ) this.value=''">
 											</div>
 											<div class="row_select">
-												<span class="left">Miles &amp; More</span>
+												<span class="left">英里 &amp; 更多</span>
 												<select><option>no membership</option></select>
 											</div>
 											<div class="row_select">
 												<div class="pad_left1">
-													Country of residence<br>
+													居住地<br>
 													<div class="select1"><select><option>&nbsp;</option></select></div>
 												</div>
 											</div>
@@ -165,66 +165,70 @@
 		<div class="wrapper pad1">
 			<article class="col1">
 				<div class="box1">
-							<h2 class="top">Offers of the Week from UK</h2>
+							<h2 class="top">推荐旅游圣地</h2>
 							<div class="pad">
-								<strong>From Birmingham</strong><br>
+								<strong>地区</strong><br>
 								<ul class="pad_bot1 list1">
 									<li>
-										<span class="right color1">from GBP 143.-</span>
-										<a href="{{URL('books')}}">Zurich</a>
+										<span class="right color1">价格</span>
+										<a href="{{URL('books')}}">景区</a>
 									</li>
 								</ul>
-								<strong>From London City</strong><br>
+								<strong>地区</strong><br>
 								<ul class="pad_bot1 list1">
 									<li>
-										<span class="right color1">from GBP 176.-</span>
-										<a href="{{URL('books')}}">Basel</a>
+										<span class="right color1">价格</span>
+										<a href="{{URL('books')}}">景区</a>
 									</li>
 									<li>
-										<span class="right color1">from GBP 109.-</span>
-										<a href="{{URL('books')}}">Geneva</a>
+										<span class="right color1">价格</span>
+										<a href="{{URL('books')}}">景区</a>
 									</li>
 								</ul>
-								<strong>From London Heathrow</strong><br>
+								<strong>地区</strong><br>
 								<ul class="pad_bot2 list1">
 									<li>
-										<span class="right color1">from GBP 100.-</span>
-										<a href="{{URL('books')}}">Geneva</a>
+										<span class="right color1">价格</span>
+										<a href="{{URL('books')}}">景区</a>
 									</li>
 									<li>
-										<span class="right color1">from GBP 112.-</span>
-										<a href="{{URL('books')}}">Zurich</a>
+										<span class="right color1">价格</span>
+										<a href="{{URL('books')}}">景区</a>
 									</li>
 									<li>
-										<span class="right color1">from GBP 88.-</span>
-										<a href="{{URL('books')}}">Basel</a>
+										<span class="right color1">价格</span>
+										<a href="{{URL('books')}}">景区</a>
 									</li>
 								</ul>
 							</div>
-							<h2>From Ireland To Switzerland</h2>
+							<h2>热门景点</h2>
 							<div class="pad">
-								<strong>From Dublin</strong><br>
+								<strong>地点</strong><br>
 								<ul class="pad_bot2 list1">
 									<li class="pad_bot1">
-										<span class="right color1">from EUR 122.-</span>
-										<a href="{{URL('books')}}">Zurich</a>
+										<span class="right color1">价格</span>
+										<a href="{{URL('books')}}">景区</a>
+									</li>
+									<li class="pad_bot1">
+										<span class="right color1">价格</span>
+										<a href="{{URL('books')}}">景区</a>
 									</li>
 								</ul>
 							</div>
 						</div>
 					</article>
 					<article class="col2">
-						<h3>About Our Airlines<span>Template created  team</span></h3>
+						<h3>我们的航空公司<span>About Our Airlines</span></h3>
 						<div class="wrapper">
 							<article class="cols">
 								<figure><img src="images/page1_img1.jpg" alt="" class="pad_bot2"></figure>
-								<p class="pad_bot1"><strong>Airlines is one of <a href="http://blog.templatemonster.com/free-website-templates/" target="_blank">free website templates</a> created  team.</strong></p>
-								<p>This website template is optimized for 1024X768 screen resolution. It is also XHTML &amp; CSS valid. This website template has several pages: <a href="{{URL('index')}}">About</a>, <a href="{{URL('offers')}}">Offers</a>, <a href="{{URL('book')}}">Book</a>, <a href="{{URL('services')}}">Services</a>, <a href="{{URL('safe')}}">Safety</a>, <a href="{{URL('contacts')}}">Contacts</a>.</p>
+								<p class="pad_bot1"><strong>航空公司是 <a href="http://blog.templatemonster.com/free-website-templates/" target="_blank">The four group</a> created  team.</strong></p>
+								<p>The way you choose, don't say tired &nbsp;&nbsp;<a href="{{URL('index')}}">About</a>, <a href="{{URL('offers')}}">Offers</a>, <a href="{{URL('book')}}">Book</a>, <a href="{{URL('services')}}">Services</a>, <a href="{{URL('safe')}}">Safety</a>, <a href="{{URL('contacts')}}">Contacts</a>.</p>
 							</article>
 							<article class="cols pad_left1">
 								<figure><img src="images/page1_img2.jpg" alt="" class="pad_bot2"></figure>
-								<p class="pad_bot1"><strong>This <a href="http://blog.templatemonster.com/2011/05/09/free-website-template-airlines/" target="_blank">Airlines Template</a> goes with two packages.</strong></p>
-								<p>With PSD source files and without them. PSD source files are available for free for the registered members of Templates.com. The basic package (without PSD source files) is available for anyone without registration).</p>
+								<p class="pad_bot1"><strong>这家 <a href="http://blog.templatemonster.com/2011/05/09/free-website-template-airlines/" target="_blank">The four group航空公司</a> is very good.</strong></p>
+								<p>Hard work, hard work</p>
 							</article>
 						</div>
 						<a href="#" class="button1"><strong>Read More</strong></a>

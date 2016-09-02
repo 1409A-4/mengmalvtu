@@ -25,12 +25,12 @@ Route::group(['prefix' => 'admin','middleware'=>'login'],function () {
 
 
 Route::get('index/index','Index\IndexController@index');//前台首页
-Route::get('index/contacts','Index\IndexController@contacts');
-Route::get('index/offers','Index\IndexController@offers');
-Route::get('index/book','Index\IndexController@book');
-Route::get('index/services','Index\IndexController@services');
-Route::get('index/safe','Index\IndexController@safe');
-Route::get('index/books','Index\IndexController@books');
+Route::get('index/contacts','Index\IndexController@contacts');//前台客服  *联系我们
+Route::get('index/offers','Index\IndexController@offers');//前台优惠
+Route::get('index/book','Index\IndexController@book');//前台预约
+Route::get('index/services','Index\IndexController@services');//前台服务
+Route::get('index/safe','Index\IndexController@safe');//前台安全
+Route::get('index/books','Index\IndexController@books');//前台登记
 
 
 
