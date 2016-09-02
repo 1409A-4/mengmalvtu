@@ -62,27 +62,36 @@ class LoginController extends Controller
         $data = $request->except('_token');
 
         $rules = [
-            'b_email' => 'required',
-            'b_name' => 'required',
-            'b_pwd' => 'required',
-            'r_pwd' => 'required',
-            'b_check' => 'accepted',
+            'bemail' => 'required | unique:business,bemail',
+            'bname' => 'required | unique:business,bname',
+            'bpwd' => 'required',
+            'rpwd' => 'required | same:bpwd',
+            'bcheck' => 'accepted',
 
         ];
         $message = [
-            'b_email.required' =>  '邮箱不能为空！',
-            'b_name.required'  =>  '商号不能为空！',
-            'b_pwd.required'   =>  '密码不能为空！',
-            'r_pwd.required'   =>  '确认密码有误！',
-            'b_check.accepted' =>  '赞同商户协议！',
+            'bemail.required' =>  '邮箱不能为空！',
+            'bemail.unique'   =>  '邮箱已被占用！',
+            'bname.required'  =>  '商号不能为空！',
+            'bname.unique'    =>  '商号已被占用！',
+            'bpwd.required'   =>  '密码不能为空！',
+            'rpwd.required'   =>  '确认密码不能为空！',
+            'rpwd.confirmed'  =>  '确认密码不一致！',
+            'bcheck.accepted' =>  '赞同商户协议！',
 
         ];
         $validator = Validator::make($data, $rules, $message);
         if ($validator->passes()) {
-            return $data;
+            $business = new Business();
+            $data = $request->except('_token','bcheck','rpwd');
+            $re = $business -> insert($data);
+           var_dump($re);die;
+
+
+
 
         } else {
-            return back()->withErrors($validator);
+            return back()->withErrors($validator)->with(['st'=>1]);
         }
 
     }
