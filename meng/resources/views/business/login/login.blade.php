@@ -44,12 +44,53 @@
     <script src="assets/js/jq.js"></script>
     <script src="assets/js/jquery.validationEngine-zh_CN.js"></script>
     <script src="assets/js/jquery.validationEngine.js"></script>
+    <script type="text/javascript" src="assets/js/region.js"></script>
     <script>
         $(function () {
             $('#form_id').validationEngine();
             $('#form_register').validationEngine();
+            var st=$('#center').attr('st');
+            if(st==1){
+                $('.widget-box.visible').removeClass('visible');
+                $('#signup-box').addClass('visible');
+            }
         });
 
+    </script>
+    <script>
+        var obj = eval(data);
+        var str = '';
+        jQuery(function () {
+            str += "<option value=''>-请选择-</option>";
+            for (v in obj.province) {
+                str += "<option value='" + v + "'>" + obj.province[v] + "</option>";
+            }
+            jQuery('#pro').html(str);
+
+            jQuery("#pro").change(function () {
+                var str = '';
+                var cid = jQuery('#pro').val();
+                //alert(cid)
+                str += "<option value=''>-请选择-</option>";
+                for (v in obj.city[cid]) {
+                    str += "<option value='" + v + "'>" + obj.city[cid][v] + "</option>";
+                    var str1 = "<option value=''>-请选择-</option>";
+                }
+                jQuery('#city').html(str);
+                jQuery('#county').html(str1);
+            });
+            jQuery("#city").change(function () {
+                var str = '';
+                var cid = jQuery('#city').val();
+                //alert(cid)
+                str += "<option value=''>-请选择-</option>";
+                for (v in obj.county[cid]) {
+                    str += "<option value='" + v + "'>" + obj.county[cid][v] + "</option>";
+
+                }
+                jQuery('#county').html(str);
+            })
+        });
     </script>
 
 </head>
@@ -60,7 +101,7 @@
         <div class="row">
             <div class="col-sm-10 col-sm-offset-1">
                 <div class="login-container">
-                    <div class="center">
+                    <div class="center" id="center" st="{{ session('st') }}">
                         <h1>
                             <i class="icon-leaf green"></i>
                             <span class="red">合作</span>
@@ -79,7 +120,8 @@
                                         <i class="icon-coffee green"></i>
                                         请输入
                                     </h4>
-                                    @if (count($errors) > 0)
+
+                                    @if (count($errors) > 0 && session('st')!=1)
                                         <div class="alert alert-danger">
                                             <ul>
                                                 @foreach ($errors->all() as $error)
@@ -88,6 +130,8 @@
                                             </ul>
                                         </div>
                                     @endif
+
+
 
                                     <div class="space-6"></div>
 
@@ -148,7 +192,7 @@
                             </div><!-- /widget-body -->
                         </div><!-- /login-box -->
 
-                        <div id="forgot-box" class="forgot-box widget-box no-border">
+                        <div id="forgot-box" class="forgot-box  widget-box no-border">
                             <div class="widget-body">
                                 <div class="widget-main">
                                     <h4 class="header red lighter bigger">
@@ -196,7 +240,7 @@
                                         <i class="icon-group blue"></i>
                                         申请店铺
                                     </h4>
-                                    @if (count($errors) > 0)
+                                    @if (count($errors) > 0 && session('st')==1)
                                         <div class="alert alert-danger">
                                             <ul>
                                                 @foreach ($errors->all() as $error)
@@ -206,14 +250,39 @@
                                         </div>
                                     @endif
                                     <div class="space-6"></div>
-                                    <p> 请输入您的详细信息: </p>
+                                    <p> 快速注册: </p>
 
                                     <form id="form_register" action="business/add" method="post">
                                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                                         <fieldset>
+
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="email" name="b_email" class="form-control
+															<input type="text" name="bname" class="form-control
+															validate[required]" placeholder="商号" />
+															<i class="icon-dashboard"></i>
+														</span>
+                                            </label>
+
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" name="btruename" class="form-control
+															validate[required]"
+                                                                   placeholder="真实姓名" />
+															<i class="icon-user"></i>
+														</span>
+                                            </label>
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" name="bidcard" class="form-control
+															validate[required]"
+                                                                   placeholder="身份证号" />
+															<i class="icon-edit"></i>
+														</span>
+                                            </label>
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="email" name="bemail" class="form-control
 															validate[required]"
                                                                    placeholder="邮箱" />
 															<i class="icon-envelope"></i>
@@ -222,15 +291,27 @@
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" name="b_name" class="form-control
-															validate[required]" placeholder="商号" />
-															<i class="icon-user"></i>
+															<input type="text" name="bdescribe" class="form-control
+															validate[required]"
+                                                                   placeholder="描述" />
+															<i class="icon-inbox"></i>
+														</span>
+                                            </label>
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" name="bphone" class="form-control
+															validate[required]"
+                                                                   placeholder="手机" />
+															<i class="icon-hdd"></i>
 														</span>
                                             </label>
 
+
+
+
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" name="b_pwd" class="form-control
+															<input type="password" name="bpwd" class="form-control
 															validate[required]"
                                                                    placeholder="密码" />
 															<i class="icon-lock"></i>
@@ -239,15 +320,40 @@
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" name="r_pwd" class="form-control
+															<input type="password" name="rpwd" class="form-control
 															validate[required]"
                                                                    placeholder="确认 密码" />
 															<i class="icon-retweet"></i>
 														</span>
                                             </label>
 
+
+                                            <label class="block clearfix">
+
+                                                <span class="block input-icon input-icon-right"> 上传营业执照
+                                                <input type="file" name="blicence" >
+                                                    </span>
+                                            </label>
+                                            <span>地址</span>
+                                            <label class="block clearfix">
+
+                                                <select name="province" id="pro" class=" validate[required]
+                                                col-md-4"></select>
+                                                <select name="city" id="city" class="validate[required]
+                                                col-md-4"></select>
+                                                <select name="county" id="county" class="validate[required]
+                                                col-md-4"></select>
+                                            </label>
+                                            <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" name="baddress" class="form-control
+															validate[required]"
+                                                                   placeholder="详细地址" />
+															<i class="icon-home"></i>
+														</span>
+                                            </label>
                                             <label class="block">
-                                                <input type="checkbox" name="b_check" class="ace
+                                                <input type="checkbox" name="bcheck" class="ace
                                                 validate[minCheckbox[1]]" />
                                                 <span class="lbl">
 															我接受
