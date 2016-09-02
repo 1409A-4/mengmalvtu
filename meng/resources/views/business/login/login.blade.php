@@ -334,7 +334,6 @@
                                                 <input type="file" name="blicence" >
                                                     </span>
                                             </label>
-                                            <span>地址</span>
                                             <label class="block clearfix">
 
                                                 <select name="province" id="pro" class=" validate[required]
