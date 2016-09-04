@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
         });
         Validator::extend('utf', function($attribute, $value, $parameters)
         {
-            return preg_match('/([\S+] |[\x{4e00}-\x{9fa5}]){10,40}/u', $value);
+            return preg_match('/[\x{4e00}-\x{9fa5}]+/u', $value);
 
         });
     }

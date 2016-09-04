@@ -290,7 +290,7 @@
                         <select name="county" id="s_county" class="validate[required] col-md-4"></select>
                     </label>
                     <div>
-                        <textarea class="form-control validate[required,custom[chinese],minSize[5],maxSize[30]]"name="bhome" id="form-field-8"
+                        <textarea class="form-control validate[required,custom[chinese],minSize[10],maxSize[40]]"name="bhome" id="form-field-8"
                                   placeholder="详细地址"></textarea>
                     </div>
                     <label class="block">
@@ -384,8 +384,8 @@ jQuery('#'+id).addClass('visible');
 <script>
 
     $(function () {
-        //$('#form_id').validationEngine();
-        //$('#form_register').validationEngine();
+        $('#form_id').validationEngine();
+        $('#form_register').validationEngine();
         var st=$('#center').attr('st');
         if(st==1){
             $('.widget-box.visible').removeClass('visible');
