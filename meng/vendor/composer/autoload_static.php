@@ -281,6 +281,7 @@ class ComposerStaticInit7fb81aceb8772aaaa410b0de365dec8c
         'AdminRole' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_061411_admin_role.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateSessionsTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_054833_create_sessions_table.php',
+        'CreateThirdTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_03_024818_create_third_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'FileUp' => __DIR__ . '/../..' . '/app/class/FileUp.php',

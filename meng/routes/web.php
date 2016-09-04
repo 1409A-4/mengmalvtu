@@ -32,5 +32,22 @@ Route::get('index/services','Index\IndexController@services');
 Route::get('index/safe','Index\IndexController@safe');
 Route::get('index/books','Index\IndexController@books');
 
+/** 前台登录路由 **/
 
+Route::get('index/login','Index\LoginController@index');//登录页面
+Route::post('login/loginin','Index\LoginController@loginin');//登录验证
+Route::get('login/third','Index\LoginController@thirdlogin');//第三方登录
 
+//Route::get('index/register','Index\LoginController@register');
+//Route::get('index/send','Index\LoginController@send');
+//Route::get('index/regis','Index\LoginController@registration');
+
+Route::group(['prefix'=>'index'],function(){
+    Route::get('register','Index\LoginController@register');//注册
+    Route::get('send','Index\LoginController@send');//注册时发验证码
+    Route::post('regis','Index\LoginController@registration');//注册验证
+
+});
+
+Route::get('login/loginout','Index\LoginController@loginout');//退出
+Route::get('login/center','Index\LoginController@loginout');//用户中心
