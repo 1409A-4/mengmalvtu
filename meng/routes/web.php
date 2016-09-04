@@ -55,6 +55,8 @@ Route::get('index/books','Index\IndexController@books');//前台登记
 
 //sphinx搜索
 Route::get('index/cesi','Index\SphinxController@cesi');//搜索sphinx
+Route::post('index/search1','Index\SphinxController@search1');//s1
+Route::post('index/search2','Index\SphinxController@search2');//s1
 
 //地区管理
 //Route::get('index/region','RegionController@region');//三级联动地区管理

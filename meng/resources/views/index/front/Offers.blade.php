@@ -9,254 +9,88 @@
 <div class="main">
 	@include('index.public.header')
 <!--content -->
-		<?php
-		date_default_timezone_set("PRC");
-		$nowtime = time();
-		$rq = date("Y-m-d",$nowtime);
-		?>
 	<section id="content">
 		<div class="wrapper pad1">
-			<article class="col1">
-				<div class="pad_bot3">
-				<div class="box1">
-					<h2 class="top">搜索航班</h2>
-						<form id="form_4" method="post">
-										<div>
-											<div class="row">
-												<span class="left">出发地</span>
-												<input type="text" class="input">
-											</div>
-											<div class="row">
-												<span class="left">目的地</span>
-												<input type="text" class="input">
-											</div>
-											<div class="row">
-												<span class="left">出发航班</span>
-												<input type="text" class="input1"  onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="gotime">
-
-											</div>
-											<div class="row">
-												<span class="left">返回航班</span>
-												<input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="gotime">
-											</div>
-											<div class="row">
-												<span class="left">成人</span>
-												<input type="text" class="input2" value="2"  onblur="if(this.value=='') this.value='2'" onFocus="if(this.value =='2' ) this.value=''">
-											</div>
-											<div class="row">
-												<span class="left">儿童</span>
-												<input type="text" class="input2" value="0"  onblur="if(this.value=='') this.value='0'" onFocus="if(this.value =='0' ) this.value=''">
-												<span class="pad_left1">(0-11 years)</span>
-											</div>
-											<div class="wrapper">
-												<span class="right relative"><a href="#" class="button1" onClick="document.getElementById('form_4').submit()"><strong>Search</strong></a></span>
-											</div>
-										</div>
-									</form>
-						</div>
-						</div>
-				<div class="box1">
-							<h2 class="top">本周的热门报价</h2>
-							<div class="pad">
-								<strong>地区</strong><br>
-								<ul class="pad_bot1 list1">
-									<li>
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景点</a>
-									</li>
-								</ul>
-								<strong>地区</strong><br>
-								<ul class="pad_bot1 list1">
-									<li>
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景点</a>
-									</li>
-									<li>
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景点</a>
-									</li>
-								</ul>
-								<strong>地区</strong><br>
-								<ul class="pad_bot2 list1">
-									<li>
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景点</a>
-									</li>
-									<li>
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景点</a>
-									</li>
-									<li>
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景点</a>
-									</li>
-								</ul>
-								<strong>地区</strong><br>
-								<ul class="pad_bot2 list1">
-									<li>
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景点</a>
-									</li>
-									<li>
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景点</a>
-									</li>
-								</ul>
-								<strong>地区</strong><br>
-								<ul class="pad_bot2 list1">
-									<li>
-										<span class="right color1">价格</span>
-										<a href="{{URL('books')}}">景点</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</article>
-					<article class="col2">
-						<h3 class="pad_top1">特价景区</h3>
+					<article class="col">
+						<h3 class="pad_top1">景点</h3>
 						<div class="wrapper pad_bot3">
-							<figure class="left marg_right1"><img src="images/page2_img1.jpg" alt=""></figure>
-							<div class="cols">
-							<h4>地区</h4>
-							<ul class="list1">
-								<li>
-									<span class="color1 right">价格</span>
-									<a href="{{URL('books')}}">景点</a>
-								</li>
-								<li>
-									<span class="color1 right">价格</span>
-									<a href="{{URL('books')}}">景点</a>
-								</li>
-								<li>
-									<span class="color1 right">价格</span>
-									<a href="{{URL('books')}}">景点</a>
-								</li>
-								<li>
-									<span class="color1 right">价格</span>
-									<a href="{{URL('books')}}">景点</a>
-								</li>
-								<li>
-									<span class="color1 right">价格</span>
-									<a href="{{URL('books')}}">景点</a>
-								</li>
-								<li>
-									<a href="#">更多目的地</a>
-								</li>
-							</ul>
-							</div>
+							<figure class="left marg_right1">
+								<table>
+									<tr>
+										<td style="padding: 0 10px 0 10px"><img src="images/page2_img1.jpg" alt=""></td>
+										<td style="padding: 0 10px 0 10px"><img src="images/page2_img1.jpg" alt=""></td>
+										<td style="padding: 0 10px 0 10px"><img src="images/page2_img1.jpg" alt=""></td>
+									</tr>
+									<tr>
+										<td style="padding: 0 10px 0 10px">这个是特卖</td>
+										<td style="padding: 0 10px 0 10px">这个是特卖</td>
+										<td style="padding: 0 10px 0 10px">这个是特卖</td>
+									</tr>
+								</table>
+							</figure>
 						</div>
-						<h3>酒店优惠</h3>
+						<h3>酒店</h3>
 						<div class="wrapper pad_bot3">
-							<figure class="left marg_right1"><img src="images/page2_img2.jpg" alt=""></figure>
 							<div class="cols">
-							<h4>来自某地区</h4>
-							<ul class="list1 pad_bot1">
-								<li>
-									<span class="color1 right">价格</span>
-									<a href="{{URL('books')}}">景区</a>
-								</li>
-							</ul>
-							<h4>来自某地区</h4>
-							<ul class="list1 pad_bot1">
-								<li>
-									<span class="color1 right">价格</span>
-									<a href="{{URL('books')}}">景区</a>
-								</li>
-								<li>
-									<span class="color1 right">价格</span>
-									<a href="{{URL('books')}}">景区</a>
-								</li>
-								<li>
-									<span class="color1 right">价格</span>
-									<a href="{{URL('books')}}">景区</a>
-								</li>
-							</ul>
-								</div>
-						</div>
-						<h3>特价机票</h3>
-						<div class="wrapper">
-							<figure class="left marg_right1"><img src="images/page2_img3.jpg" alt=""></figure>
-							<div class="cols">
-							<h4>来自英国</h4>
-							<ul class="list1 pad_bot1">
-								<li>
-									<span class="color1 right">from GBP 464.-</span>
-									<a href="{{URL('books')}}">香港</a>
-								</li>
-								<li>
-									<span class="color1 right">from GBP 509.-</span>
-									<a href="{{URL('books')}}">约翰内斯堡</a>
-								</li>
-								<li>
-									<span class="color1 right">from GBP 601.-</span>
-									<a href="{{URL('books')}}">曼谷</a>
-								</li>
-								<li>
-									<span class="color1 right">from GBP 727.-</span>
-									<a href="{{URL('books')}}">保罗</a>
-								</li>
-								<li>
-									<span class="color1 right">from GBP 464.-</span>
-									<a href="{{URL('books')}}">苏黎世</a>
-								</li>
-								<li>
-									<span class="color1 right">from GBP 509.-</span>
-									<a href="{{URL('books')}}">日内瓦</a>
-								</li>
-								<li>
-									<span class="color1 right">from GBP 601.-</span>
-									<a href="{{URL('books')}}">巴塞尔</a>
-								</li>
-								<li>
-									<a href="#">更多的优惠</a>
-								</li>
-							</ul>
-								订单由XX年XX月XX日至XX年XX月XX日之间旅行。
-							</div>
-						</div>
-						<h3>国际租车</h3>
-						<div class="wrapper">
-							<figure class="left marg_right1"><img src="images/page2_img3.jpg" alt=""></figure>
-							<div class="cols">
-								<h4>来自英国</h4>
+								<h4>促销</h4>
 								<ul class="list1 pad_bot1">
 									<li>
-										<span class="color1 right">from GBP 464.-</span>
-										<a href="{{URL('books')}}">香港</a>
+										<span class="color1 right">from GBP 146.-</span>
+										<a href="{{URL('books')}}">xx大酒店低价预定</a>
 									</li>
 									<li>
-										<span class="color1 right">from GBP 509.-</span>
-										<a href="{{URL('books')}}">约翰内斯堡</a>
+										<span class="color1 right">from GBP 146.-</span>
+										<a href="{{URL('books')}}">XX豪华公寓预定</a>
 									</li>
 									<li>
-										<span class="color1 right">from GBP 601.-</span>
-										<a href="{{URL('books')}}">曼谷</a>
-									</li>
-									<li>
-										<span class="color1 right">from GBP 727.-</span>
-										<a href="{{URL('books')}}">保罗</a>
-									</li>
-									<li>
-										<span class="color1 right">from GBP 464.-</span>
-										<a href="{{URL('books')}}">苏黎世</a>
-									</li>
-									<li>
-										<span class="color1 right">from GBP 509.-</span>
-										<a href="{{URL('books')}}">日内瓦</a>
-									</li>
-									<li>
-										<span class="color1 right">from GBP 601.-</span>
-										<a href="{{URL('books')}}">巴塞尔</a>
-									</li>
-									<li>
-										<a href="#">更多的优惠</a>
+										<span class="color1 right">from GBP 159.-</span>
+										<a href="{{URL('books')}}">XX民居住宅</a>
 									</li>
 								</ul>
-								订单由XX年XX月XX日至XX年XX月XX日之间旅行。
 							</div>
+							<figure class="left marg_right1">
+								<table>
+									<tr>
+										<td  style="padding: 0 10px 0 10px"><img src="images/page2_img2.jpg" alt=""></td>
+										<td  style="padding: 0 10px 0 10px"><img src="images/page2_img2.jpg" alt=""></td>
+									</tr>
+								</table>
+							</figure>
 						</div>
-					</article>
-				</div>
+						<h3>机票特价</h3>
+						<div class="wrapper pad_bot3">
+							<figure class="left marg_right1"><img src="images/QQ.png" alt=""></figure>
+							<figure class="left marg_right1">北京到大同<br/>10:00-12:00<br/>￥356元&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="立抢" /> </figure>
+							<figure class="left marg_right1">山西到大连<br/>10:00-12:00<br/>￥356元&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="立抢" /></figure>
+							<figure class="left marg_right1">北京到大同<br/>10:00-12:00<br/>￥356元&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="立抢" /> </figure>
+						</div>
+						<h3>租车特价</h3>
+						<div class="cols">
+							<h4>租车活动</h4>
+							<ul class="list1 pad_bot1">
+								<li>
+									<span class="color1 right">from GBP 146.-</span>
+									<a href="{{URL('books')}}">跑车出租</a>
+								</li>
+								<li>
+									<span class="color1 right">from GBP 146.-</span>
+									<a href="{{URL('books')}}">XX豪华公寓预定</a>
+								</li>
+								<li>
+									<span class="color1 right">from GBP 159.-</span>
+									<a href="{{URL('books')}}">XX民居住宅</a>
+								</li>
+							</ul>
+						</div>
+						<figure class="left marg_right1">
+							<table>
+								<tr>
+									<td  style="padding: 0 10px 0 10px"><img src="images/che1.jpg" alt="" style="width: 260px; height: 150px;"></td>
+									<td  style="padding: 0 10px 0 10px"><img src="images/che2.jpg" alt="" style="width: 260px; height: 150px;"></td>
+								</tr>
+							</table>
+						</figure>
+
 			</section>
 			<!--content end-->
 			<!--footer -->
