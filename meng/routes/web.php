@@ -45,6 +45,9 @@ Route::group(['prefix' => 'admin','middleware'=>'login'],function () {
     Route::get('loadgoodsedit', 'Admin\GoodsController@LoadGoodsEdit');//加载商品编辑
     Route::post('goodsedit', 'Admin\GoodsController@GoodsEdit');//商品编辑
     Route::get('goodsdel', 'Admin\GoodsController@GoodsDel');//商品删除
+    Route::get('loadgoodsimg', 'Admin\GoodsController@LoadGoodsImg');//加载商品图片
+    Route::post('addgoodsimg', 'Admin\GoodsController@AddGoodsImg');//商品图片添加
+    Route::get('delgoodsimg', 'Admin\GoodsController@DelGoodsImg');//商品图片修改
 });
 Route::get('index/contacts','Index\IndexController@contacts');//前台客服  *联系我们
 Route::get('index/offers','Index\IndexController@offers');//前台优惠

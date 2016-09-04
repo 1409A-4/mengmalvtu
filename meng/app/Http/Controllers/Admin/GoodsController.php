@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
 use App\Model\Admin\Classify;
 use App\Model\Admin\Goods;
 use App\Model\Admin\GoodsImg;
-use Illuminate\Http\Request;
 use DB;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class GoodsController extends Controller
@@ -31,9 +31,7 @@ class GoodsController extends Controller
             'gprice'=>'required|integer',
             'gstock'=>'required|integer',
             'nid'=>'integer',
-            'sprovince'=>'required',
-            'scity'=>'required',
-            'scounty'=>'required',
+            'gaddress'=>'required',
             'ghome'=>'required|between:2,100'
         ];
         $message=[
@@ -45,9 +43,7 @@ class GoodsController extends Controller
             'gstock.required'=>'商品库存不能为空！',
             'gstock.integer'=>'商品库存必须为整数！',
             'nid.integer'=>'请选择商品分类！',
-            'sprovince.required'=>'商品省级地区不能为空！',
-            'scity.required'=>'商品市级地区不能为空！',
-            'scounty.required'=>'商品县级地区不能为空！',
+            'gaddress.required'=>'请选择商品所在地区！',
             'ghome.required'=>'商品详细地址不能为空！',
             'ghome.between'=>'商品详细地址长度必须在2到100位之间！'
         ];
@@ -55,8 +51,6 @@ class GoodsController extends Controller
         if ($validator->passes()) {
             $data['bid']=session('uid');
             $data['gbtime']=date('Y-m-d H:i:s');
-            $data['gaddress']=$data['sprovince'].$data['scity'].$data['scounty'];
-            unset($data['sprovince'],$data['scity'],$data['scounty']);
             if($gid=Goods::insertGetId($data)){
                 if ($request->hasFile('gimg')) {
                     foreach($_FILES['gimg']['name'] as $k=>$v){
@@ -94,14 +88,72 @@ class GoodsController extends Controller
     /*
      * 加载商品编辑
      * */
-    public function LoadGoodsEdit(){
-
+    public function LoadGoodsEdit(Request $request){
+        $goods=Goods::where('gid',$request->input('gid'))->first()->toArray();
+        $data=Classify::get()->toArray();
+        $data=\Tool::tree($data);
+        return view('admin/goods/edit',['data'=>$data,'goods'=>$goods]);
     }
     /*
      * 商品编辑
      * */
-    public function GoodsEdit(){
-
+    public function GoodsEdit(Request $request){
+        $gid=$request->input('gid');
+        $data=$request->except('_token','gimg');
+        $rules=[
+            'gname' => "required|between:2,10|unique:goods,gname,$gid,gid",
+            'gprice'=>'required|integer',
+            'gstock'=>'required|integer',
+            'nid'=>'integer',
+            'gaddress'=>'required',
+            'ghome'=>'required|between:2,100'
+        ];
+        $message=[
+            'gname.required'=>'商品名称不能为空！',
+            'gname.between'=>'商品名称长度必须在2到10位之间！',
+            'gname.unique'=>'商品名称已经占用！',
+            'gprice.required'=>'商品价格不能为空！',
+            'gprice.integer'=>'商品价格必须为整数！',
+            'gstock.required'=>'商品库存不能为空！',
+            'gstock.integer'=>'商品库存必须为整数！',
+            'nid.integer'=>'请选择商品分类！',
+            'gaddress.required'=>'请选择商品所在地区！',
+            'ghome.required'=>'商品详细地址不能为空！',
+            'ghome.between'=>'商品详细地址长度必须在2到100位之间！'
+        ];
+        $validator = Validator::make($data, $rules, $message);
+        if ($validator->passes()) {
+            $data['bid']=session('uid');
+            $data['getime']=date('Y-m-d H:i:s');
+            if ($request->hasFile('gimg')) {
+                if($bool=Goods::where('gid',$gid)->update($data)!==false){
+                    foreach($_FILES['gimg']['name'] as $k=>$v){
+                        $file['name']=$_FILES['gimg']['name'][$k];
+                        $file['type']=$_FILES['gimg']['type'][$k];
+                        $file['tmp_name']=$_FILES['gimg']['tmp_name'][$k];
+                        $file['error']=$_FILES['gimg']['error'][$k];
+                        $file['size']=$_FILES['gimg']['size'][$k];
+                        $arr[$k]['gimg']=\FileUp::image($file);
+                        $arr[$k]['gid']=$gid;
+                    }
+                    if(GoodsImg::insert($arr)){
+                        return back()->with(['message'=>'修改成功！']);
+                    }else{
+                        return back()->with(['message'=>'添加图片失败！']);
+                    }
+                }else{
+                    return back()->with(['message'=>'修改失败！']);
+                }
+            }else{
+                if($bool=Goods::where('gid',$gid)->update($data)!==false){
+                    return back()->with(['message'=>'修改成功！']);
+                }else{
+                    return back()->with(['message'=>'修改失败！']);
+                }
+            }
+        } else {
+            return back()->withErrors($validator);
+        }
     }
     /*
     * 商品删除
@@ -116,6 +168,48 @@ class GoodsController extends Controller
             echo json_encode(0);
         }else{
             echo json_encode(1);
+        }
+    }
+    /*
+     * 加载商品图片
+     * */
+    public function LoadGoodsImg(Request $request){
+        $gid=$request->input('gid');
+        $data=GoodsImg::where('gid',$gid)->get();
+        return view('admin/goods/goodsimg',['data'=>$data,'gid'=>$gid]);
+    }
+    /*
+     * 商品添加
+     * */
+    public function AddGoodsImg(Request $request){
+        $gid=$request->input('gid');
+        if ($request->hasFile('gimg')) {
+            foreach($_FILES['gimg']['name'] as $k=>$v){
+                $file['name']=$_FILES['gimg']['name'][$k];
+                $file['type']=$_FILES['gimg']['type'][$k];
+                $file['tmp_name']=$_FILES['gimg']['tmp_name'][$k];
+                $file['error']=$_FILES['gimg']['error'][$k];
+                $file['size']=$_FILES['gimg']['size'][$k];
+                $arr[$k]['gimg']=\FileUp::image($file);
+                $arr[$k]['gid']=$gid;
+            }
+            if(GoodsImg::insert($arr)){
+                return back()->with(['message'=>'添加图片成功！']);
+            }else{
+                return back()->with(['message'=>'添加图片失败！']);
+            }
+        }else{
+            return back()->with(['message'=>'请添加图片再上传亲！']);
+        }
+    }
+    /*
+     * 商品图片删除
+     * */
+    public function DelGoodsImg(Request $request){
+        if(GoodsImg::where('iid',$request->input('iid'))->delete()){
+            echo json_encode(1);
+        }else{
+            echo json_encode(0);
         }
     }
 }

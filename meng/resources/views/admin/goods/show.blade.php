@@ -53,7 +53,7 @@
                                     <td class="gid">{{$v->gid}}</td>
                                     <td>{{$v->gname}}</td>
                                     <td>{{$v->nname}}</td>
-                                    <td><a href="">商品图片</a></td>
+                                    <td><a href="admin/loadgoodsimg?gid={{$v->gid}}">商品图片</a></td>
                                     <td>{{$v->gprice}}</td>
                                     <td>{{$v->gvisit or "NULL"}}</td>
                                     <td>{{$v->gsell  or "NULL"}}</td>
@@ -64,7 +64,7 @@
                                         <span class="label label-sm label-danger del">删除</span>
                                     </td>
                                     <td>
-                                        <a href="admin/loadclassifyedit?nid={{$v->gid}}" class="label label-sm label-success">修改</a>
+                                        <a href="admin/loadgoodsedit?gid={{$v->gid}}" class="label label-sm label-success">修改</a>
                                     </td>
                                 </tr>
                             @endforeach
