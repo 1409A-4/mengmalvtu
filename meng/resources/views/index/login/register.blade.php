@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>猛犸旅途注册表单</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 <body>
 
 <div class="register-container">
@@ -60,13 +60,13 @@
 </div>
 
 
-<script src="js/jquery.min.js"></script>
-<script src="js/common.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/common.js"></script>
 <!--背景图片自动更换-->
-<script src="js/supersized.3.2.7.min.js"></script>
-<script src="js/supersized-init.js"></script>
+<script src="./js/supersized.3.2.7.min.js"></script>
+<script src="./js/supersized-init.js"></script>
 <!--表单验证-->
-<script src="js/jquery.validate.min.js?var1.14.0"></script>
+<script src="./js/jquery.validate.min.js?var1.14.0"></script>
 <script>
     $('#code').click(function () {
         email=$('#email').val();

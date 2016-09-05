@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>猛犸旅途登录表单</title>
     <base href="{{URL::asset('/')}}">
-    <link rel="stylesheet" href="{{env('APP_HOST')}}/css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 
 <body>
 
@@ -53,13 +53,13 @@
 {{--</div>--}}
 {{--第三方登录--}}
 <script type="text/javascript" src="http://open.51094.com/user/myscript/157a481067e6d3.html "></script>
-<script src="{{env('APP_HOST')}}/js/jquery.min.js"></script>
-<script src="{{env('APP_HOST')}}/js/common.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/common.js"></script>
 <!--背景图片自动更换-->
-<script src="{{env('APP_HOST')}}/js/supersized.3.2.7.min.js"></script>
-<script src="{{env('APP_HOST')}}/js/supersized-init.js"></script>
+<script src="./js/supersized.3.2.7.min.js"></script>
+<script src="./js/supersized-init.js"></script>
 <!--表单验证-->
-<script src="{{env('APP_HOST')}}/js/jquery.validate.min.js?var1.14.0"></script>
+<script src="./js/jquery.validate.min.js?var1.14.0"></script>
 
 </body>
 </html>
