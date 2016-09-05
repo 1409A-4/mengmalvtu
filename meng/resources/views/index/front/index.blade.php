@@ -95,7 +95,14 @@
 											</div>
 											<div class="row">
 												<span class="left">位置</span>
-												<input type="text" class="input">
+												<select id="province" name="to_place" style="width: 65px;">
+													<option>请选择省份</option>
+													<?php foreach($list as $v):?>
+													<option value="<?php echo $v->region_id ?>">
+														<?php echo $v->region_name ?>
+													</option>
+													<?php endforeach;?>
+												</select>
 											</div>
 											<div class="row">
 												<span class="left">入住房屋</span>
