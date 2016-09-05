@@ -15,4 +15,14 @@ class IndexController extends Controller
     public function businessHome(){
         return view('business/index/index');
     }
+
+    /*
+     * 商家信息
+     * 展示
+     * 修改
+     */
+    public function businessInfo(){
+        //echo session('bname');die;
+        return view('business/index/info');
+    }
 }

@@ -228,7 +228,7 @@
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                         <img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
                         <span class="user-info">
-									<small>欢迎光临,</small>
+									<small>欢迎光临，</small>
 									{{ session('bname') }}
 								</span>
 
@@ -253,7 +253,7 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="#">
+                            <a href="business/logout">
                                 <i class="icon-off"></i>
                                 退出
                             </a>

@@ -68,12 +68,15 @@ Route::post('index/getcity','Index\IndexController@getcity');//三级联动地�
 /*
  *商户模块
  */
-Route::group(['prefix' => 'business'],function () {
-Route::get('login', 'Business\LoginController@businessLogin');             //商户登录
-Route::post('login_pro', 'Business\LoginController@businessLogin_pro');    //商户登录验证
-Route::get('logout', 'Business\LoginController@businessLogout');           //商户退出
-Route::get('home', 'Business\IndexController@businessHome');               //商户大厅
-Route::post('add', 'Business\LoginController@businessAdd');                //商户入驻
+Route::get('business/login', 'Business\LoginController@businessLogin');             //商户登录
+Route::post('business/login_pro', 'Business\LoginController@businessLogin_pro');    //商户登录验证
+
+Route::group(['prefix' => 'business','middleware'=>'business'],function () {
+
+        Route::get('logout', 'Business\LoginController@businessLogout');           //商户退出
+        Route::get('home', 'Business\IndexController@businessHome');               //商户大厅
+        Route::post('add', 'Business\LoginController@businessAdd');                //商户入驻
+        Route::get('info', 'Business\IndexController@businessInfo');                //商户信息
 
 });
 

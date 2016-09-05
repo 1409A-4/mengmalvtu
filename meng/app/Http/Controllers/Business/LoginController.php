@@ -44,7 +44,9 @@ class LoginController extends Controller
             $data['bpwd']=md5($data['bpwd']);
             $re = $business->where($data)->first();
             if($re){
+
                 session(['bid'=>$re->bid,'bname'=>$re->bname]);
+                //echo session('bname');die;
                 $b_time['betime'] = date('Y-m-d H:i:s');
                 $business->where('bid', session('bid'))->update($b_time);   //修改登录时间
                 return redirect('business/home');
