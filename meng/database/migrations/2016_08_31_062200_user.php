@@ -19,11 +19,7 @@ class User extends Migration
             $table->char('upwd',32);
             $table->string('uemail',30);
             $table->string('uphone',15);
-            $table->dateTime('ubtime');
-            $table->dateTime('uetime');
             $table->char('uip',30);
-            $table->string('uoppid',30);
-            $table->string('uimg',100);
             $table->tinyInteger('ustatus');
             $table->timestamps();
         });

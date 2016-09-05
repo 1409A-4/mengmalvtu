@@ -16,10 +16,11 @@ class CreateThirdTable extends Migration
         //
         Schema::create('third', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',30);
-            $table->string('img',100);
+            $table->string('uname',30);
+            $table->string('uimg',100);
             $table->string('uniq',50);
             $table->string('from',50);
+            $table->char('uip',30);
             $table->timestamps();
         });
 

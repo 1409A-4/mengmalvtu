@@ -125,7 +125,7 @@ class LoginController extends Controller{
                 $arr['uname']=$data['username'];
                 $arr['upwd'] = md5($data['password']);
                 $bool=User::where($arr)->first();
-                session(['uid'=>$bool->uid,'uname'=>$bool->uname]);
+                session(['uid'=>$bool->uid,'uname'=>$bool->uname], time()+900);
               /*  $value = $request->session()->get('uid');
                 var_dump($value);die;*/
                 return redirect::to('/');
@@ -144,11 +144,30 @@ class LoginController extends Controller{
         $code = $request->get('code');
         $open = new open51094();
         $arr = $open->me($code);
-        $res =  DB::table('third')->insert($arr);
-        if($res){
-            return redirect::to('index/login');
+
+        $data['uname']=$arr['name'];
+        $data['uimg']=$arr['img'];
+        $data['uniq']=$arr['uniq'];
+        $data['from']=$arr['from'];
+        $data['created_at']=date('Y-m-d');
+        $data['uip']=$_SERVER['REMOTE_ADDR'];
+
+        //判断用户是否登录过
+        $re = DB::table('third')->where('uname',$data['uname'])->first();
+        if($re){
+           // session(['uid'=>$re->id,'uname'=>$re->uname], time()+900);
+            \Request::session()->put('uname',$re['uname']);
+           // echo \Request::session()->get('uname');die;
+            return redirect::to('/');
         }else{
-            echo "window.location.href = document.referrer";
+
+            $res =  DB::table('third')->insert($data);
+            if($res){
+                session(['uid'=>$res->id,'uname'=>$res->uname] ,time()+900);
+                return redirect::to('/');
+            }else{
+                echo "window.location.href = document.referrer";
+            }
         }
     }
 
@@ -158,5 +177,51 @@ class LoginController extends Controller{
         $request->session()->flush();
         return redirect::to('/');
     }
+    
+    /*
+     * 
+     * 用户中心
+     * 
+     * */
+    
+    public function usercenter(){
+        $name =\Request::session()->get('uname');
+
+        $arr = DB::table('user')->where('uname',$name)->first();
+
+        if($arr){
+
+        }else{
+            $arr = DB::table('third')->where('uname',$name)->first();
+        }
+        $curl = "http://api.k780.com:88/?app=ip.get&ip=".$arr['uip']."&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json";
+        $str = file_get_contents($curl);
+
+        $data =json_decode($str,true);
+        $value = $data['result']['area_style_areanm'];
+        $a =  substr($value,strpos($value,',')+1);
+        $arr['ip']=$a;
+      
+      //  print_r($arr);die;
+        return view('index.login.center',$arr);
+    }
+    
+   /* public function weixin(){
+        //-------配置
+        $AppID = 'wx3b602e0a423d3723';
+        $AppSecret = 'd324a1529a7f0cd77f9b72fa3b309d38';
+        $callback  =  'www.yanan.com/index/login'; //回调地址
+        //微信登录
+        session_start();
+        //-------生成唯一随机串防CSRF攻击
+        $state  = md5(uniqid(rand(), TRUE));
+
+        $_SESSION["wx_state"]    =   $state; //存到SESSION
+        $callback = urlencode($this->callback);
+        $wxurl = "https://open.weixin.qq.com/connect/qrconnect?appid=".$this->AppID."&redirect_uri={$callback}&response_type=code&scope=snsapi_login&state={$state}#wechat_redirect";
+        header("Location: $wxurl");
+
+
+    }*/
 
 }

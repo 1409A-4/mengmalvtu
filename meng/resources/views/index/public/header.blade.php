@@ -8,7 +8,7 @@
 
                 <ul>
                     <li><a href="" class="nav1"><?php echo Request::session()->get('uname')?></a></li>
-                    <li><a href="{{URL('index/register')}}" class="nav2">用户中心</a></li>
+                    <li><a href="{{URL('index/center')}}" class="nav2">用户中心</a></li>
                     <li><a href="{{URL('login/loginout')}}" class="nav3">退出</a></li>
                 </ul>
             @else
