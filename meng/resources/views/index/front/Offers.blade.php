@@ -9,8 +9,14 @@
 <div class="main">
 	@include('index.public.header')
 <!--content -->
+		<?php
+		date_default_timezone_set("PRC");
+		$nowtime = time();
+		$rq = date("Y-m-d",$nowtime);
+		?>
 	<section id="content">
 		<div class="wrapper pad1">
+
 					<article class="col">
 						<h3 class="pad_top1">景点</h3>
 						<div class="wrapper pad_bot3">
@@ -28,6 +34,7 @@
 									</tr>
 								</table>
 							</figure>
+
 						</div>
 						<h3>酒店</h3>
 						<div class="wrapper pad_bot3">

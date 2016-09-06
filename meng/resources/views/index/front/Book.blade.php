@@ -9,11 +9,13 @@
 <div class="main">
 	@include('index.public.header')
 <!--content -->
-        <?php
-            date_default_timezone_set("PRC");
-            $nowtime = time();
-            $rq = date("Y-m-d",$nowtime);
-        ?>
+
+		<?php
+		date_default_timezone_set("PRC");
+		$nowtime = time();
+		$rq = date("Y-m-d",$nowtime);
+		?>
+
 	<section id="content">
 		<div class="wrapper pad1">
 			<article class="col1">
@@ -73,8 +75,10 @@
 													<div class="cols marg_right1">
 														<h6>出港航班</h6>
 														<div class="row">
+
                                                             <input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="Out_time">
 														</div>
+
 													</div>
 												</div>
 												<div class="wrapper pad_bot1">
@@ -143,8 +147,10 @@
 													<div class="cols marg_right1">
 														<h6>出港航班</h6>
 														<div class="row">
+
                                                             <input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="Out1_time">
 														</div>
+
 													</div>
 												</div>
 												<div class="wrapper pad_bot1">
@@ -162,8 +168,10 @@
 														</div>
 													</div>
 													<div class="cols">
-														<div class="select1"><span class="left">机舱</span><select><option>Economy</option></select><a href="#" class="help"></a></div>
-														<div class="select1"><span class="left">航空公司</span><select><option>航空公司</option></select><a href="#" class="help"></a></div>
+
+														<div class="select1"><span class="left">机舱</span><select><option>经济</option></select><a href="#" class="help"></a></div>
+														<div class="select1"><span class="left">航空公司</span><select><option>航班</option></select><a href="#" class="help"></a></div>
+
 													</div>
 													<span class="right relative"><a href="#" class="button1" onClick="document.getElementById('form_6').submit()"><strong>Search</strong></a></span>
 												</div>
@@ -183,18 +191,20 @@
 											<div class="pad">
 												<div class="wrapper under">
 													<div class="col1">
-														<div class="row"><span class="left">From</span><input type="text" class="input"><a href="#" class="help"></a></div>
-														<div class="row"><span class="left">To</span><input type="text" class="input"><a href="#" class="help"></a></div>
+														<div class="row"><span class="left">出发地</span><input type="text" class="input"><a href="#" class="help"></a></div>
+														<div class="row"><span class="left">目的地</span><input type="text" class="input"><a href="#" class="help"></a></div>
 													</div>
-													<div class="check_box"><input type="checkbox"><span>One way</span><a href="#" class="help"></a></div>
-													<div class="check_box"><input type="checkbox"><span>Direct flights</span></div>
+													<div class="check_box"><input type="checkbox"><span>第一种方式</span><a href="#" class="help"></a></div>
+													<div class="check_box"><input type="checkbox"><span>直达航班</span></div>
 												</div>
 												<div class="wrapper under">
 													<span class="left">航班</span>
 													<div class="cols marg_right1">
 														<h6>出港航班</h6>
 														<div class="row">
+
                                                             <input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="Out3_time">
+
 														</div>
 													</div>
 												</div>
@@ -213,10 +223,12 @@
 														</div>
 													</div>
 													<div class="cols">
+
 														<div class="select1"><span class="left">机舱</span><select><option>经济舱</option></select>
 															<a href="#" class="help"></a>
 														</div>
 														<div class="select1"><span class="left">航空公司</span><select><option>航空公司</option></select>
+
 															<a href="#" class="help"></a>
 														</div>
 													</div>

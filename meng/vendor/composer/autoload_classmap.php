@@ -6,7 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+
     'AdminTableSeeder' => $baseDir . '/database/seeds/AdminTableSeeder.php',
+
+
+
     'Admin' => $baseDir . '/database/migrations/2016_08_31_061334_admin.php',
     'AdminRole' => $baseDir . '/database/migrations/2016_08_31_061411_admin_role.php',
     'Businesss' => $baseDir . '/database/migrations/2016_09_02_065859_businesss.php',
@@ -14,6 +18,11 @@ return array(
     'CreateSessionsTable' => $baseDir . '/database/migrations/2016_08_31_054833_create_sessions_table.php',
     'CreateThirdTable' => $baseDir . '/database/migrations/2016_09_03_024818_create_third_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
+
+
+    'AdminTableSeeder' => $baseDir . '/database/seeds/AdminTableSeeder.php',
+
+
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'FileUp' => $baseDir . '/app/class/FileUp.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',

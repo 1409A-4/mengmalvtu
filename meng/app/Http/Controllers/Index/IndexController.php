@@ -20,6 +20,10 @@ class IndexController extends BaseController
 
         return view('index/front/index',['list'=>$arr]);
     }
+    public function new(){
+        return view('index/front/new');
+
+    }
 //    public function new(){
 //        return view('index/front/new');
 //    }

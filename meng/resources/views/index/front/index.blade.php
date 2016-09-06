@@ -59,12 +59,14 @@
 											<div class="wrapper">
 												<div class="col1">
 													<div class="row">
+
 														<span class="left">出境游</span>
 														<input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="Outbound_time">
 													</div>
 													<div class="row">
 														<span class="left">返回</span>
 														<input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="back_time">
+
 													</div>
 												</div>
 											</div>
@@ -105,6 +107,7 @@
 												</select>
 											</div>
 											<div class="row">
+
 												<span class="left">入住房屋</span>
 												<input type="text" class="input1" value="03.05.2011"  onblur="if(this.value=='') this.value='03.05.2011'" onFocus="if(this.value =='03.05.2011' ) this.value=''">
 												<a href="#" class="help"></a>
@@ -112,6 +115,7 @@
 											<div class="row">
 												<span class="left">到期房屋</span>
 												<input type="text" class="input1" value="10.05.2011"  onblur="if(this.value=='') this.value='10.05.2011'" onFocus="if(this.value =='10.05.2011' ) this.value=''">
+
 												<a href="#" class="help"></a>
 											</div>
 											<div class="row">
@@ -149,6 +153,7 @@
 												<input type="text" class="input">
 											</div>
 											<div class="row">
+
 												<span class="left">提取</span>
 												<input type="text" class="input1" value="03.05.2011"  onblur="if(this.value=='') this.value='03.05.2011'" onFocus="if(this.value =='03.05.2011' ) this.value=''">
 												<input type="text" class="input2" value="12:00"  onblur="if(this.value=='') this.value='12:00'" onFocus="if(this.value =='12:00' ) this.value=''">
@@ -157,6 +162,7 @@
 												<span class="left">返还</span>
 												<input type="text" class="input1" value="10.05.2011"  onblur="if(this.value=='') this.value='10.05.2011'" onFocus="if(this.value =='10.05.2011' ) this.value=''">
 												<input type="text" class="input2" value="12:00"  onblur="if(this.value=='') this.value='12:00'" onFocus="if(this.value =='12:00' ) this.value=''">
+
 											</div>
 											<div class="row_select">
 												<span class="left">更多公里</span>
@@ -164,8 +170,14 @@
 											</div>
 											<div class="row_select">
 												<div class="pad_left1">
-													居住地<br>
-													<div class="select1"><select><option>&nbsp;</option></select></div>
+													地区<br>
+													<div class="select1">
+														<select>
+															@foreach($list as $v)
+																<option><?php echo $v->region_name ?></option>
+																@endforeach
+														</select>
+													</div>
 												</div>
 											</div>
 											<div class="wrapper">
@@ -279,11 +291,11 @@
 		tabs.init();
 	});
 	jQuery(document).ready(function($) {
-		$('#form_1, #form_2, #form_3').jqTransform({imgPath:'jqtransformplugin/img/'});	
+		$('#form_1, #form_2, #form_3').jqTransform({imgPath:'jqtransformplugin/img/'});
 	});
 	$(window).load(function() {
 	$('#slider').nivoSlider({
-		effect:'fade', //Specify sets like: 'fold,fade,sliceDown, sliceDownLeft, sliceUp, sliceUpLeft, sliceUpDown, sliceUpDownLeft' 
+		effect:'fade', //Specify sets like: 'fold,fade,sliceDown, sliceDownLeft, sliceUp, sliceUpLeft, sliceUpDown, sliceUpDownLeft'
 		slices:15,
 		animSpeed:500,
 		pauseTime:6000,
