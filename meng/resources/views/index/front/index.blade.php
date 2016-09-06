@@ -174,7 +174,7 @@
 													<div class="select1">
 														<select>
 															@foreach($list as $v)
-																<option><?php echo $v->region_name ?></option>
+																<option><?php echo $v['region_name'] ?></option>
 																@endforeach
 														</select>
 													</div>
