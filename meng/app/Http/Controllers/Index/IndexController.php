@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers\Index;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -16,11 +17,16 @@ class IndexController extends BaseController
     //前台首页
     public function index(){
         $arr = DB::table("region")->where("parent_id",'=','1')->get();
+
         return view('index/front/index',['list'=>$arr]);
     }
     public function new(){
         return view('index/front/new');
+
     }
+//    public function new(){
+//        return view('index/front/new');
+//    }
     public function contacts(){
         return view('index/front/Contacts');
     }

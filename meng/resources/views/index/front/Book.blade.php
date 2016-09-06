@@ -9,55 +9,22 @@
 <div class="main">
 	@include('index.public.header')
 <!--content -->
+
 		<?php
 		date_default_timezone_set("PRC");
 		$nowtime = time();
 		$rq = date("Y-m-d",$nowtime);
 		?>
+
 	<section id="content">
 		<div class="wrapper pad1">
 			<article class="col1">
 				<div class="box1">
-					<h2 class="top">本周热门价格</h2>
+					<h2 class="top">本周热销</h2>
 					<div class="pad">
-						<strong>伯明翰</strong><br>
+						<strong>北京</strong><br>
 						<ul class="pad_bot1 list1">
-							<li><span class="right color1">from GBP 143.-</span><a href="{{URL('books')}}">苏黎世</a></li>
-						</ul>
-						<strong>伦敦（lcy）</strong><br>
-						<ul class="pad_bot1 list1">
-							<li><span class="right color1">from GBP 176.-</span><a href="{{URL('books')}}">日内瓦</a></li>
-							<li><span class="right color1">from GBP 109.-</span><a href="{{URL('books')}}">苏黎世</a></li>
-						</ul>
-						<strong>伦敦（lcy）</strong><br>
-						<ul class="pad_bot2 list1">
-							<li><span class="right color1">from GBP 100.-</span><a href="{{URL('books')}}">日内瓦</a></li>
-							<li><span class="right color1">from GBP 112.-</span><a href="{{URL('books')}}">苏黎世</a></li>
-							<li><span class="right color1">from GBP 88.-</span><a href="{{URL('books')}}">巴塞尔</a></li>
-						</ul>
-						<strong>曼彻斯特</strong><br>
-						<ul class="pad_bot2 list1">
-							<li><span class="right color1">from GBP 97.-</span><a href="{{URL('books')}}">巴塞尔</a></li>
-							<li><span class="right color1">from GBP 103.-</span><a href="{{URL('books')}}">苏黎世</a></li>
-						</ul>
-						<strong>爱丁堡</strong><br>
-						<ul class="pad_bot2 list1">
-							<li><span class="right color1">from GBP 165.-</span><a href="{{URL('books')}}">苏黎世</a></li>
-						</ul>
-						<strong>伯明翰</strong><br>
-						<ul class="pad_bot1 list1">
-							<li><span class="right color1">from GBP 143.-</span><a href="{{URL('books')}}">苏黎世</a></li>
-						</ul>
-						<strong>伦敦（lcy）</strong><br>
-						<ul class="pad_bot1 list1">
-							<li><span class="right color1">from GBP 176.-</span><a href="{{URL('books')}}">日内瓦</a></li>
-							<li><span class="right color1">from GBP 109.-</span><a href="{{URL('books')}}">苏黎世</a></li>
-						</ul>
-						<strong>伦敦（lhg）</strong><br>
-						<ul class="pad_bot2 list1">
-							<li><span class="right color1">from GBP 100.-</span><a href="{{URL('books')}}">日内瓦</a></li>
-							<li><span class="right color1">from GBP 112.-</span><a href="{{URL('books')}}">苏黎世</a></li>
-							<li><span class="right color1">from GBP 88.-</span><a href="{{URL('books')}}">巴塞尔</a></li>
+							<li><span class="right color1">from GBP 143.-</span><a href="{{URL('books')}}">故宫</a></li>
 						</ul>
 					</div>
 				</div>
@@ -65,9 +32,9 @@
 			<article class="col2">
 					<div class="tabs2">
 							<ul class="nav">
-								<li class="selected"><a href="#Flight">航班</a></li>
+								<li class="selected"><a href="#Flight">飞机</a></li>
 								<li><a href="#Hotel">旅店</a></li>
-								<li class="end"><a href="#Rental">租金</a></li>
+								<li class="end"><a href="#Rental">租赁</a></li>
 							</ul>
 							<div class="content">
 								<div class="tab-content" id="Flight">
@@ -108,10 +75,10 @@
 													<div class="cols marg_right1">
 														<h6>出港航班</h6>
 														<div class="row">
-															<input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="outtime">
+
+                                                            <input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="Out_time">
 														</div>
-													</div>
-													<div class="cols">
+
 													</div>
 												</div>
 												<div class="wrapper pad_bot1">
@@ -129,10 +96,10 @@
 														</div>
 													</div>
 													<div class="cols">
-														<div class="select1"><span class="left">机舱</span><select><option>经济</option></select>
+														<div class="select1"><span class="left">机舱</span><select><option>经济舱</option></select>
 															<a href="#" class="help"></a>
 														</div>
-														<div class="select1"><span class="left">航空公司</span><select><option>航班</option></select>
+														<div class="select1"><span class="left">航空公司</span><select><option>航空公司</option></select>
 															<a href="#" class="help"></a>
 														</div>
 													</div>
@@ -180,10 +147,10 @@
 													<div class="cols marg_right1">
 														<h6>出港航班</h6>
 														<div class="row">
-															<input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="outtime1">
+
+                                                            <input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="Out1_time">
 														</div>
-													</div>
-													<div class="cols">
+
 													</div>
 												</div>
 												<div class="wrapper pad_bot1">
@@ -201,8 +168,10 @@
 														</div>
 													</div>
 													<div class="cols">
+
 														<div class="select1"><span class="left">机舱</span><select><option>经济</option></select><a href="#" class="help"></a></div>
 														<div class="select1"><span class="left">航空公司</span><select><option>航班</option></select><a href="#" class="help"></a></div>
+
 													</div>
 													<span class="right relative"><a href="#" class="button1" onClick="document.getElementById('form_6').submit()"><strong>Search</strong></a></span>
 												</div>
@@ -233,7 +202,9 @@
 													<div class="cols marg_right1">
 														<h6>出港航班</h6>
 														<div class="row">
-															<input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="outtime2">
+
+                                                            <input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="Out3_time">
+
 														</div>
 													</div>
 												</div>
@@ -252,10 +223,12 @@
 														</div>
 													</div>
 													<div class="cols">
-														<div class="select1"><span class="left">机舱</span><select><option>经济</option></select>
+
+														<div class="select1"><span class="left">机舱</span><select><option>经济舱</option></select>
 															<a href="#" class="help"></a>
 														</div>
-														<div class="select1"><span class="left">航空公司</span><select><option>航空</option></select>
+														<div class="select1"><span class="left">航空公司</span><select><option>航空公司</option></select>
+
 															<a href="#" class="help"></a>
 														</div>
 													</div>

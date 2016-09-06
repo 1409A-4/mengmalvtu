@@ -5,6 +5,10 @@
     <title>商品添加</title>
     <base href="{{URL::asset('/')}}"/>
     @include('admin.public.style')
+    <style type="text/css">
+        #allmap {width: 100%;height:300px;overflow: hidden; margin:0;font-family:"微软雅黑";}
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=qrVcijkPNAyshv7PwoeR2wPbG9Mtk4sX 	"></script>
 </head>
 
 <body class=" ">
@@ -81,23 +85,34 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="inputEmail" class="col-md-3 control-label">所在地区<span class='require'>*</span>
+                                <div class="form-group " >
+                                    <label for="inputContent" class="col-md-3 control-label">商品地区<span class='require'>*</span></label>
+
+                                    <div class="col-md-3">
+                                        <select id="s_province"  class="selectpicker bg-green form-control" ></select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select id="s_city"  class="selectpicker bg-green form-control" ></select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select id="s_county"  class="selectpicker bg-green form-control" ></select>
+                                    </div>
+                                    <label for="inputContent" class="col-md-3 control-label"><span class='require'></span></label>
+                                    <div class="col-md-9">
+                                        <div id="allmap"  ></div>
+                                    </div>
+                                    <label for="inputUsername" class="col-md-3 control-label"> <span class='require'></span>
                                     </label>
-                                    <div class="col-md-3">
-                                        <select id="s_province"  class="selectpicker bg-green form-control" name="sprovince"></select>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <select id="s_city"  class="selectpicker bg-green form-control" name="scity"></select>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <select id="s_county"  class="selectpicker bg-green form-control" name="scounty"></select>
+                                    <div class="col-md-9">
+                                        <div class="input-icon"><i class="fa fa-indent"></i>
+                                            <input  type="text" placeholder="商品地区" id="gaddress" name="gaddress" class="form-control" />
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputContent" class="col-md-3 control-label">详细地址<span class='require'>*</span></label>
                                     <div class="col-md-9">
-                                        <textarea id="inputContent" rows="3" class="form-control" name="ghome"></textarea>
+                                        <textarea id="inputContent" rows="3" class="form-control" id="" name="ghome"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -127,8 +142,40 @@
 @include('admin.public.foot')
 </body>
 </html>
-<script>
+<script type="text/javascript">
     $(document).area("s_province","s_city","s_county");//调用三级插件
+    var map = new BMap.Map("allmap");    // 创建Map实例
+    map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+    map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+    map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+
+    var point = new BMap.Point(116.331398,39.897445);//鼠标点击地图显示
+    map.centerAndZoom(point,12);
+    var geoc = new BMap.Geocoder();
+    map.addEventListener("click", function(e){
+        var pt = e.point;
+        geoc.getLocation(pt, function(rs){
+            var addComp = rs.addressComponents;
+            $('#gaddress').val(addComp.province+addComp.city+addComp.district+addComp.street+addComp.streetNumber);
+//            alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+        });
+    });
+
+
+    $('#s_province,#s_county,#s_city').change(function(){
+        var one=$('#s_province').val();
+        var two=$('#s_city').val();
+        var three=$('#s_county').val();
+
+        var city = one+two+three;
+        if(city != ""){
+            map.centerAndZoom(city,11);      // 用城市名设置地图中心点
+        }
+    })
+
+
     var message=$('#message').val();
     if(message!==""){
         layer.msg(message, {icon:6 });

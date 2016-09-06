@@ -40,8 +40,10 @@
 <script src="assets/js/html5shiv.js"></script>
 
 
+
 <![endif]-->
 <!表单验证-->
+
 
 
 
@@ -49,6 +51,7 @@
 
 <body class="login-layout">
 <div class="main-container">
+
 <div class="main-content">
 <div class="row">
 <div class="col-sm-10 col-sm-offset-1">
@@ -198,6 +201,7 @@
                             <li>{{ $error }}</li>
                         @endforeach
                     </ul>
+
                 </div>
             @endif
             <span style="color:red;">{{ empty(session('message'))? '': session('message')}}</span>

@@ -41,9 +41,13 @@ class LoginCoontroller extends Controller
             if ($verify->check($_POST['uverify'])) {
                 unset($data['uverify']);
                 $data['upwd'] = md5($data['upwd']);
-                $bool=Admin::where($data)->first();
-                session(['uid'=>$bool->uid,'uname'=>$bool->uname]);
-                return redirect()->action('Admin\IndexController@Index');
+                if( $bool=Admin::where($data)->first()){
+                    session(['uid'=>$bool->uid,'uname'=>$bool->uname]);
+                    Admin::where('uid',$bool->uid)->update(['uetime'=>date('Y-m-d H:i:s')]);
+                    return redirect()->action('Admin\IndexController@Index');
+                }else{
+                    return back()->with(['message' => "账户或密码错误！"]);
+                }
             } else {
                 return back()->with(['message' => "验证码错误！"]);
             }
@@ -51,7 +55,6 @@ class LoginCoontroller extends Controller
             return back()->withErrors($validator);
         }
     }
-
     /*
      * 验证码
      * */
@@ -88,10 +91,10 @@ class LoginCoontroller extends Controller
         ];
         $validator = Validator::make($data, $rules, $message);
         if ($validator->passes()) {
-            if($data['urepwd']==$data['upwd']){
-                return back()->with(['message'=>'修改成功！']);
-            }
             if(Admin::where(['uid'=>session('uid'),'upwd'=>md5($data['upwd'])])->first()){
+                if($data['urepwd']==$data['upwd']){
+                    return back()->with(['message'=>'修改成功！']);
+                }
                 if(Admin::where(['uid'=>session('uid')])->update(['upwd'=>md5($data['urepwd'])])){
                     return back()->with(['message'=>'修改成功！']);
                 }else{

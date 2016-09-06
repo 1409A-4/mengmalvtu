@@ -77,6 +77,7 @@ class LoginController extends Controller
         //验证规则
         $rules = [
 
+
             'bname' => 'required | unique:business,bname | utf | between:2,5',
             'bdescribe' => 'required |  utf | between:5,20',
             'btruename' => 'required |  utf | between:2,5',
@@ -89,10 +90,12 @@ class LoginController extends Controller
             'city' => 'required',
             'county' => 'required',
             'bhome' => 'required |  utf | between:10,40',
+
             'bcheck' => 'accepted',
 
         ];
         $message = [
+
             'bname.required'  =>  '商号不能为空！',
             'bname.utf'        =>  '商号必须为汉字！',
             'bname.between'   =>  '商号必须为2-5个汉字！',
@@ -120,6 +123,7 @@ class LoginController extends Controller
             'bhome.required'   =>  '详细地址不能为空',
             'bhome.utf'   =>  '详细地址必须为汉字',
             'bhome.between'   =>  '详细地址必须为10-40个汉字！',
+
             'bcheck.accepted' =>  '赞同商户协议！',
 
         ];
@@ -127,7 +131,8 @@ class LoginController extends Controller
         $validator = Validator::make($data, $rules, $message);
 
         if ($validator->passes()) {
-            return $data['bphone'];
+
+          
 
             $business = new Business();
             $data = $request->except('_token','bcheck','rpwd');
@@ -149,6 +154,7 @@ class LoginController extends Controller
             }else{
                 return back()->with(['message'=>'文件不存在！','st'=>1]);
             }
+
 
         } else {
             return back()->withErrors($validator)->with(['st'=>1]);

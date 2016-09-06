@@ -12,12 +12,17 @@
 */
 
 
-Route::get('/','Index\IndexController@index');
 
 
 /*
  * 后台路由
  * */
+
+//Route::get('/', function () {
+//    return view('index/front/index');
+//});
+Route::get('/','Index\IndexController@index');
+
 
 Route::get('admin/login', 'Admin\LoginCoontroller@loadLogin');//登录路由
 Route::post('admin/checklogin', 'Admin\LoginCoontroller@checkLogin');//验证登录
@@ -42,8 +47,10 @@ Route::group(['prefix' => 'admin','middleware'=>'login'],function () {
     Route::get('loadgoodsedit', 'Admin\GoodsController@LoadGoodsEdit');//加载商品编辑
     Route::post('goodsedit', 'Admin\GoodsController@GoodsEdit');//商品编辑
     Route::get('goodsdel', 'Admin\GoodsController@GoodsDel');//商品删除
+    Route::get('loadgoodsimg', 'Admin\GoodsController@LoadGoodsImg');//加载商品图片
+    Route::post('addgoodsimg', 'Admin\GoodsController@AddGoodsImg');//商品图片添加
+    Route::get('delgoodsimg', 'Admin\GoodsController@DelGoodsImg');//商品图片修改
 });
-
 
 
 Route::get('index/contacts','Index\IndexController@contacts');//前台客服  *联系我们
@@ -55,6 +62,8 @@ Route::get('index/books','Index\IndexController@books');//前台登记
 
 //sphinx搜索
 Route::get('index/cesi','Index\SphinxController@cesi');//搜索sphinx
+Route::post('index/search1','Index\SphinxController@search1');//s1
+Route::post('index/search2','Index\SphinxController@search2');//s1
 
 //地区管理
 //Route::get('index/region','RegionController@region');//三级联动地区管理
@@ -67,6 +76,25 @@ Route::post('index/getcity','Index\IndexController@getcity');//三级联动地�
 
 
 
+/** 前台登录路由 **/
+
+Route::get('index/login','Index\LoginController@index');//登录页面
+Route::post('login/loginin','Index\LoginController@loginin');//登录验证
+Route::get('login/third','Index\LoginController@thirdlogin');//第三方登录
+Route::get('login/wei','Index\LoginController@weixin');//第三方登录
+
+//Route::get('index/register','Index\LoginController@register');
+//Route::get('index/send','Index\LoginController@send');
+//Route::get('index/regis','Index\LoginController@registration');
+
+Route::group(['prefix'=>'index'],function(){
+    Route::get('register','Index\LoginController@register');//注册
+    Route::get('send','Index\LoginController@send');//注册时发验证码
+    Route::post('regis','Index\LoginController@registration');//注册验证
+
+});
 
 
+Route::get('login/loginout','Index\LoginController@loginout');//退出
+Route::get('index/center','Index\LoginController@usercenter');//用户中心
 

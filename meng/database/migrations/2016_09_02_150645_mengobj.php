@@ -104,7 +104,7 @@ class Mengobj extends Migration
             $table->increments('gid');
             $table->bigInteger('bid');
             $table->char('gname',30);
-            $table->decimal('gprice',5,2);
+            $table->integer('gprice');
             $table->string('gaddress',30);
             $table->string('ghome',100);
             $table->dateTime('gbtime');
