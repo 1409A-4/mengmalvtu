@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="{{ URL::asset('/')}}">
     <meta charset="utf-8" />
-    <title>添加分类</title>
-    <base href="{{ URL::asset('/') }}">
+    <title>商品添加</title>
     <meta name="keywords" content="Bootstrap" />
     <meta name="description" content="Bootstrap" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,7 +28,7 @@
 
     <!-- fonts -->
 
-
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
 
     <!-- ace styles -->
 
@@ -82,9 +82,9 @@
                     </li>
 
                     <li>
-                        <a href="#">分类管理</a>
+                        <a href="#">商品管理</a>
                     </li>
-                    <li class="active">添加分类</li>
+                    <li class="active">添加商品</li>
                 </ul><!-- .breadcrumb -->
 
                 <div class="nav-search" id="nav-search">
@@ -100,92 +100,100 @@
             <div class="page-content">
                 <div class="page-header">
                     <h1>
-                        分类管理
-                        <small>
-                            <i class="icon-double-angle-right"></i>
-                            添加分类
-                        </small>
+                        添加商品
                     </h1>
                 </div><!-- /.page-header -->
 
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
-                        @if (count($errors) > 0)
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                        <span style="color: red">{{ empty(session('mag'))?'':session('mag')}}</span>
-                        <form class="form-horizontal" role="form" action="business/typeAdd_pro" method="post">
-                            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+
+                        <form class="form-horizontal" role="form" method="post" action="business/goodsAdd_pro" id="form_id">
+                            <input type="hidden" name="_token" value="{{ csrf_token()}}">
+
                             <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 名称
-                                </label>
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 商品名称 </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" id="form-field-1" placeholder="分类名称" class="col-xs-10
-                                    col-sm-5" name="nname"/>
+                                    <input type="text" name="gname" id="form-field-1" placeholder="商品名称" class="col-xs-10 col-sm-5" />
                                 </div>
                             </div>
 
-
-                            <div class="space-4"></div>
-
                             <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 父级名称
-                                </label>
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 所属分类 </label>
 
                                 <div class="col-sm-9">
-                                    <select name="pid" >
+                                    <select name="nid" >
                                         <option value="0">--顶级分类--</option>
                                         @foreach($type as $ty)
                                             <option value="{{ $ty['nid'] }}"><?php echo str_repeat("+",
                                                         $ty['level']*3) ?>{{ $ty['nname'] }}</option>
                                         @endforeach
                                     </select>
-
                                 </div>
                             </div>
-
-                            <div class="space-4"></div>
 
                             <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right" for="form-field-2"> 排序
-                                </label>
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 商品价格 </label>
 
                                 <div class="col-sm-9">
-                                    <input type="text" id="form-field-2" placeholder="排序" class="col-xs-10
-                                    col-sm-5" name="nsort"/>
-
+                                    <input type="text" name="gprice" id="form-field-1" placeholder="商品价格" class="col-xs-10 col-sm-5" />
                                 </div>
                             </div>
 
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 商品产地 </label>
 
+                                <div class="col-sm-9">
+                                    <select name="province" id="s_province" class=" validate[required] col-md-1"></select>
+                                    <select name="city" id="s_city" class="validate[required] col-md-1"></select>
+                                    <select name="county" id="s_county" class="validate[required] col-md-1"></select>
+                                </div>
+                            </div>
 
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 详细地址 </label>
 
+                                <div class="col-sm-9">
+                                    <input type="text" name="ghome" id="form-field-1" placeholder="商品详细地址" class="col-xs-10 col-sm-5" />
+                                </div>
+                            </div>
 
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 库存数量 </label>
+
+                                <div class="col-sm-9">
+                                    <input type="text" name="gstock" id="form-field-1" placeholder="商品库存" class="col-xs-10 col-sm-5" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 商品 </label>
+
+                                <div class="col-sm-9">
+                                    <input type="text" name="gstock" id="form-field-1" placeholder="商品库存" class="col-xs-10 col-sm-5" />
+                                </div>
+                            </div>
 
                             <div class="clearfix form-actions">
                                 <div class="col-md-offset-3 col-md-9">
-                                    <button class="btn btn-info" type="submit">
+                                    <button class="btn btn-info" type="button">
                                         <i class="icon-ok bigger-110"></i>
-                                        添加
+                                        Submit
                                     </button>
 
                                     &nbsp; &nbsp; &nbsp;
                                     <button class="btn" type="reset">
                                         <i class="icon-undo bigger-110"></i>
-                                        重置
+                                        Reset
                                     </button>
                                 </div>
                             </div>
+
+
                         </form>
 
+                                <!-- PAGE CONTENT ENDS -->
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.page-content -->
@@ -248,12 +256,6 @@
 <!-- basic scripts -->
 
 <!--[if !IE]> -->
-
-
-
-<!-- <![endif]-->
-
-<!--[if IE]>
 
 <![endif]-->
 
@@ -586,3 +588,18 @@
 
 </body>
 </html>
+<script src="assets/js/jq.js"></script>
+<script src="assets/js/jquery.validationEngine-zh_CN.js"></script>
+<script src="assets/js/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="assets/js/region.js"></script>
+<script src="js/area.ui.js"></script>
+
+<script>
+
+    $(function () {
+        $('#form_id').validationEngine();
+        $('#form_register').validationEngine();
+
+    });
+    $(document).area("s_province","s_city","s_county");//调用三级插件
+</script>

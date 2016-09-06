@@ -57,7 +57,7 @@ class IndexController extends Controller
     public function businessCode(Request $request){
 
         $check = $request -> input('check');
-        $email = $request -> input('email');
+
         $check_code = session('check_code');
 
         if($check == $check_code){

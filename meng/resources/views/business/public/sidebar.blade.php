@@ -83,16 +83,16 @@
 
             <ul class="submenu">
                 <li>
-                    <a href="tables.html">
+                    <a href="business/goodsAdd">
                         <i class="icon-double-angle-right"></i>
-                        简单 &amp; 动态
+                        商品添加
                     </a>
                 </li>
 
                 <li>
-                    <a href="jqgrid.html">
+                    <a href="">
                         <i class="icon-double-angle-right"></i>
-                        jqGrid plugin
+                        商品列表
                     </a>
                 </li>
             </ul>

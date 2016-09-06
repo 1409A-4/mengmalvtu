@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>添加分类</title>
+    <title>编辑分类</title>
     <base href="{{ URL::asset('/') }}">
     <meta name="keywords" content="Bootstrap" />
     <meta name="description" content="Bootstrap" />
@@ -84,7 +84,7 @@
                     <li>
                         <a href="#">分类管理</a>
                     </li>
-                    <li class="active">添加分类</li>
+                    <li class="active">编辑分类</li>
                 </ul><!-- .breadcrumb -->
 
                 <div class="nav-search" id="nav-search">
@@ -103,7 +103,7 @@
                         分类管理
                         <small>
                             <i class="icon-double-angle-right"></i>
-                            添加分类
+                            编辑分类
                         </small>
                     </h1>
                 </div><!-- /.page-header -->
@@ -121,18 +121,18 @@
                             </div>
                         @endif
                         <span style="color: red">{{ empty(session('mag'))?'':session('mag')}}</span>
-                        <form class="form-horizontal" role="form" action="business/typeAdd_pro" method="post">
-                            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                        <form class="form-horizontal" role="form" action="business/typeUpd_pro" method="post">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                            <input type="hidden" name="nid" value="{{ $info['nid'] }}">
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 名称
                                 </label>
 
                                 <div class="col-sm-9">
                                     <input type="text" id="form-field-1" placeholder="分类名称" class="col-xs-10
-                                    col-sm-5" name="nname"/>
+                                    col-sm-5" name="nname" value="{{$info['nname']}}"/>
                                 </div>
                             </div>
-
 
                             <div class="space-4"></div>
 
@@ -144,8 +144,13 @@
                                     <select name="pid" >
                                         <option value="0">--顶级分类--</option>
                                         @foreach($type as $ty)
-                                            <option value="{{ $ty['nid'] }}"><?php echo str_repeat("+",
+										@if($ty['nid']==$info['pid'])
+											<option value="{{ $ty['nid'] }}" selected><?php echo str_repeat("+",
                                                         $ty['level']*3) ?>{{ $ty['nname'] }}</option>
+                                        @else
+                                                <option value="{{ $ty['nid'] }}"><?php echo str_repeat("+",
+                                                        $ty['level']*3) ?>{{ $ty['nname'] }}</option>
+										@endif
                                         @endforeach
                                     </select>
 
@@ -160,7 +165,7 @@
 
                                 <div class="col-sm-9">
                                     <input type="text" id="form-field-2" placeholder="排序" class="col-xs-10
-                                    col-sm-5" name="nsort"/>
+                                    col-sm-5" name="nsort" value="{{$info['nsort']}}"/>
 
                                 </div>
                             </div>
@@ -174,7 +179,7 @@
                                 <div class="col-md-offset-3 col-md-9">
                                     <button class="btn btn-info" type="submit">
                                         <i class="icon-ok bigger-110"></i>
-                                        添加
+                                        确定
                                     </button>
 
                                     &nbsp; &nbsp; &nbsp;

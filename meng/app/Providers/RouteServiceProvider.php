@@ -36,6 +36,7 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapWebRoutes();
+        $this->mapBusinessRoutes();
 
         $this->mapApiRoutes();
 
@@ -74,6 +75,20 @@ class RouteServiceProvider extends ServiceProvider
             'prefix' => 'api',
         ], function ($router) {
             require base_path('routes/api.php');
+        });
+    }
+
+
+    /*
+     *分割路由
+     */
+    protected function mapBusinessRoutes()
+    {
+        Route::group([
+            'middleware' => 'web',
+            'namespace' => $this->namespace,
+        ], function ($router) {
+            require base_path('routes/business.php');
         });
     }
 }
