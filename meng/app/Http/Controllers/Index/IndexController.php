@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers\Index;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
