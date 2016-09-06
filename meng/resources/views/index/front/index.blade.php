@@ -39,8 +39,8 @@
 												<select id="province" name="set_place" style="width: 65px;">
 													<option>请选择省份</option>
 													<?php foreach($list as $v):?>
-													<option value="<?php echo $v->region_id ?>">
-														<?php echo $v->region_name ?>
+													<option value="<?php echo $v['region_id'] ?>">
+														<?php echo $v['region_name'] ?>
 													</option>
 													<?php endforeach;?>
 												</select>
@@ -50,8 +50,8 @@
 												<select id="province" name="to_place" style="width: 65px;">
 													<option>请选择省份</option>
 													<?php foreach($list as $v):?>
-													<option value="<?php echo $v->region_id ?>">
-														<?php echo $v->region_name ?>
+													<option value="<?php echo $v['region_id'] ?>">
+														<?php echo $v['region_name'] ?>
 													</option>
 													<?php endforeach;?>
 												</select>
@@ -98,8 +98,8 @@
 												<select id="province" name="to_place" style="width: 65px;">
 													<option>请选择省份</option>
 													<?php foreach($list as $v):?>
-													<option value="<?php echo $v->region_id ?>">
-														<?php echo $v->region_name ?>
+													<option value="<?php echo $v['region_id'] ?>">
+														<?php echo $v['region_name'] ?>
 													</option>
 													<?php endforeach;?>
 												</select>

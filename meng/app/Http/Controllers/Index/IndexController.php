@@ -17,6 +17,7 @@ class IndexController extends BaseController
     //前台首页
     public function index(){
         $arr = DB::table("region")->where("parent_id",'=','1')->get();
+
         return view('index/front/index',['list'=>$arr]);
     }
 //    public function new(){
