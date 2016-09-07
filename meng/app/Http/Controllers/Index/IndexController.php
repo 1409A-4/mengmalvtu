@@ -39,4 +39,14 @@ class IndexController extends BaseController
     public function books(){
         return view('index/front/Book2');
     }
+    public function around(){
+        $ip=$_SERVER["REMOTE_ADDR"];
+        $url= "http://www.ip138.com/ips138.asp?ip=$ip&action=2";
+        $yuan=file_get_contents($url);
+        $address = '#<td height="30" align="center" valign="top">(.*)<td align="center"><div align="center">#isU';
+        preg_match_all($address,$yuan,$content);
+        $res = $content[0][0];
+        // print_r($arr);
+        return view('index/front/around',['arr'=>$res]);
+    }
 }

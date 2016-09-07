@@ -3,7 +3,6 @@
 <head>
   <title>About</title>
 <meta charset="utf-8">
-
 	@include('index.public.links')
 </head>
 <body id="page1">
@@ -20,26 +19,25 @@
 			<article class="col1">
 						<div class="tabs">
 							<ul class="nav">
-								<li class="selected"><a href="#Flight">飞机</a></li>
+								<li class="selected"><a href="#Flight">航班</a></li>
 								<li><a href="#Hotel">旅店</a></li>
 								<li class="end"><a href="#Rental">租赁</a></li>
 							</ul>
 							<div class="content">
 								<div class="tab-content" id="Flight">
-									<form id="form_1" action="{{URL('index/search1')}}" method="post">
+									@if (Cookie::get('name_1') == '1')
+										<font color="#ff0000" style="font-size: 30px;">暂无机票信息</font>
+									@endif
+									<form id="form_1" action="{{URL('index/sflight')}}" method="post">
 										<div>
 											<div class="radio">
-												<div class="wrapper">
-													 <input type="radio" name="name1" checked>
-													 <span class="left">标准</span>
-												</div>
 											</div>
 											<div class="row">
 												<span class="left">出发地</span>
 												<select id="province" name="set_place" style="width: 65px;">
-													<option>请选择省份</option>
+													<option value="0">请选择省份</option>
 													<?php foreach($list as $v):?>
-													<option value="<?php echo $v->region_id ?>">
+													<option value="<?php echo $v->region_name ?>">
 														<?php echo $v->region_name ?>
 													</option>
 													<?php endforeach;?>
@@ -48,9 +46,9 @@
 											<div class="row">
 												<span class="left">目的地</span>
 												<select id="province" name="to_place" style="width: 65px;">
-													<option>请选择省份</option>
+													<option value="0">请选择省份</option>
 													<?php foreach($list as $v):?>
-													<option value="<?php echo $v->region_id ?>">
+													<option value="<?php echo $v->region_name ?>">
 														<?php echo $v->region_name ?>
 													</option>
 													<?php endforeach;?>
@@ -85,34 +83,32 @@
 									</form>
 								</div>
 								<div class="tab-content" id="Hotel">
-									<form id="form_2" action="{{URL('index/search2')}}" method="post">
+									<form id="form_2" action="{{URL('index/shotel')}}" method="post">
 										<div>
 											<div class="radio">
-												<div class="wrapper">
-													 <input type="checkbox" checked>
-													 合作伙伴
-												</div>
+													@if (Cookie::get('name_2') == '2')
+														<font color="#ff0000" style="font-size: 30px;">暂无酒店信息</font>
+													@endif
 											</div>
 											<div class="row">
 												<span class="left">位置</span>
-												<select id="province" name="to_place" style="width: 65px;">
-													<option>请选择省份</option>
+												<select id="province" name="to1_place" style="width: 65px;">
+													<option value="0">请选择省份</option>
 													<?php foreach($list as $v):?>
-													<option value="<?php echo $v->region_id ?>">
+													<option value="<?php echo $v->region_name ?>">
 														<?php echo $v->region_name ?>
 													</option>
 													<?php endforeach;?>
 												</select>
-											</div>
+
+											</div>	<span style="color: #ff0000">请选择始发地</span>
 											<div class="row">
 												<span class="left">入住房屋</span>
-												<input type="text" class="input1" value="03.05.2011"  onblur="if(this.value=='') this.value='03.05.2011'" onFocus="if(this.value =='03.05.2011' ) this.value=''">
-												<a href="#" class="help"></a>
+												<input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="check_in_time">
 											</div>
 											<div class="row">
 												<span class="left">到期房屋</span>
-												<input type="text" class="input1" value="10.05.2011"  onblur="if(this.value=='') this.value='10.05.2011'" onFocus="if(this.value =='10.05.2011' ) this.value=''">
-												<a href="#" class="help"></a>
+												<input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="check_out_time">
 											</div>
 											<div class="row">
 												<span class="left">房间</span>
@@ -129,34 +125,42 @@
 												<span class="pad_left1">(0-11 years)</span>
 											</div>
 											<div class="wrapper">
-												<span class="right relative"><a href="#" class="button1" onClick="document.getElementById('form_2').submit()"><strong>Search</strong></a></span>
+												<span class="right relative"><a class="button1" onClick="document.getElementById('form_2').submit()"><strong>Search</strong></a></span>
 												<a href="#" class="link1">More Options</a>
 											</div>
 										</div>
 									</form>
 								</div>
 								<div class="tab-content" id="Rental">
-									<form id="form_3" method="post">
+									<form id="form_3" action="{{URL('index/rental')}}" method="post">
 										<div>
 											<div class="radio">
+												@if (Cookie::get('name_3') == '3')
+													<font color="#ff0000" style="font-size: 30px;">暂无租车信息</font>
+												@endif
 												<div class="wrapper">
-													 <input type="radio" name="name2" checked="checked">
+													 <input type="radio" checked="checked">
 													 <span class="left">租车</span>
 												</div>
 											</div>
 											<div class="row">
 												<span class="left">租借地点</span>
-												<input type="text" class="input">
+												<select id="province" name="to2_place" style="width: 65px;">
+													<option value="0">请选择省份</option>
+													<?php foreach($list as $v):?>
+													<option value="<?php echo $v->region_name ?>">
+														<?php echo $v->region_name ?>
+													</option>
+													<?php endforeach;?>
+												</select>
 											</div>
 											<div class="row">
 												<span class="left">提取</span>
-												<input type="text" class="input1" value="03.05.2011"  onblur="if(this.value=='') this.value='03.05.2011'" onFocus="if(this.value =='03.05.2011' ) this.value=''">
-												<input type="text" class="input2" value="12:00"  onblur="if(this.value=='') this.value='12:00'" onFocus="if(this.value =='12:00' ) this.value=''">
+												<input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="extract_time">
 											</div>
 											<div class="row">
 												<span class="left">返还</span>
-												<input type="text" class="input1" value="10.05.2011"  onblur="if(this.value=='') this.value='10.05.2011'" onFocus="if(this.value =='10.05.2011' ) this.value=''">
-												<input type="text" class="input2" value="12:00"  onblur="if(this.value=='') this.value='12:00'" onFocus="if(this.value =='12:00' ) this.value=''">
+												<input type="text" class="input1" onfocus="MyCalendar.SetDate(this)" value="<?php echo $rq;?>" name="restore_time">
 											</div>
 											<div class="row_select">
 												<span class="left">更多公里</span>
@@ -165,11 +169,20 @@
 											<div class="row_select">
 												<div class="pad_left1">
 													居住地<br>
-													<div class="select1"><select><option>&nbsp;</option></select></div>
+													<div class="select1">
+														<select id="province" name="R_place" style="width: 65px;">
+															<option value="0">请选择省份</option>
+															<?php foreach($list as $v):?>
+															<option value="<?php echo $v->region_name ?>">
+																<?php echo $v->region_name ?>
+															</option>
+															<?php endforeach;?>
+														</select>
+													</div>
 												</div>
 											</div>
 											<div class="wrapper">
-												<span class="right relative"><a href="#" class="button1" onClick="document.getElementById('form_3').submit()"><strong>Search</strong></a></span>
+												<span class="right relative"><a class="button1" onClick="document.getElementById('form_3').submit()"><strong>Search</strong></a></span>
 											</div>
 										</div>
 									</form>
@@ -177,11 +190,6 @@
 							</div>
 						</div>	
 					</article>
-					<div id="slider">
-						<img src="./public/index/images/banner1.jpg" alt="">
-						<img src="./public/index/images/banner2.jpg" alt="">
-						<img src="./public/index/images/banner3.jpg" alt="">
-					</div>
 				</div>
 		<article class="col">
 			<h3 class="pad_top1">热门景区</h3>
@@ -189,7 +197,7 @@
 				<figure class="left marg_right1">
 					<table>
 						<tr>
-							<td style="padding: 0 10px 0 10px"><img src="images/page2_img1.jpg" alt=""></td>
+							<td style="padding: 0 10px 0 10px"><a href="{{URL('index/details')}}"><img src="images/page2_img1.jpg" alt=""></a></td>
 							<td style="padding: 0 10px 0 10px"><img src="images/page2_img1.jpg" alt=""></td>
 							<td style="padding: 0 10px 0 10px"><img src="images/page2_img1.jpg" alt=""></td>
 						</tr>
@@ -259,12 +267,12 @@
 			<footer>
 				<div class="wrapper">
 					<ul id="icons">
-						<li><a href="#" class="normaltip" title="Facebook"><img src="./public/index/images/icon1.jpg" alt=""></a></li>
-						<li><a href="#" class="normaltip" title="Delicious"><img src="./public/index/images/icon2.jpg" alt=""></a></li>
-						<li><a href="#" class="normaltip" title="Stumble Upon"><img src="./public/index/images/icon3.jpg" alt=""></a></li>
-						<li><a href="#" class="normaltip" title="Twitter"><img src="./public/index/images/icon4.jpg" alt=""></a></li>
-						<li><a href="#" class="normaltip" title="Linkedin"><img src="./public/index/images/icon5.jpg" alt=""></a></li>
-						<li><a href="#" class="normaltip" title="Reddit"><img src="./public/index/images/icon6.jpg" alt=""></a></li>
+						<li><a href="#" class="normaltip" title="Facebook"><img src="images/icon1.jpg" alt=""></a></li>
+						<li><a href="#" class="normaltip" title="Delicious"><img src="images/icon2.jpg" alt=""></a></li>
+						<li><a href="#" class="normaltip" title="Stumble Upon"><img src="images/icon3.jpg" alt=""></a></li>
+						<li><a href="#" class="normaltip" title="Twitter"><img src="images/icon4.jpg" alt=""></a></li>
+						<li><a href="#" class="normaltip" title="Linkedin"><img src="images/icon5.jpg" alt=""></a></li>
+						<li><a href="#" class="normaltip" title="Reddit"><img src="images/icon6.jpg" alt=""></a></li>
 					</ul>
 					<div class="links">
 						Collect from <a rel="nofollow" href="http://www.cssmoban.com/" target="_blank">网页模板</a> | <br>

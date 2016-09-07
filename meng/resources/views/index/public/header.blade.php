@@ -6,19 +6,17 @@
         <nav id="top_nav">
             <ul>
                 <li><a href="{{URL('/')}}" class="nav1">首页</a></li>
-                <li><a href="#" class="nav2">注册</a></li>
-                <li><a href="#" class="nav3">登录</a></li>
+                <li><a href="{{URL('index/safe')}}" class="nav2">安全</a></li>
+                <li><a href="{{URL('index/contacts')}}" class="nav3">联系我们</a></li>
             </ul>
         </nav>
     </div>
     <nav>
         <ul id="menu">
-            <li id="menu_active"><a href="{{URL('/')}}"><span><span>首页</span></span></a></li>
             <li><a href="{{URL('index/offers')}}"><span><span>优惠</span></span></a></li>
+            <li><a href="{{URL('index/around')}}"><span><span>周边游</span></span></a></li>
             <li><a href="{{URL('index/book')}}"><span><span>预约</span></span></a></li>
             <li><a href="{{URL('index/services')}}"><span><span>服务</span></span></a></li>
-            <li><a href="{{URL('index/safe')}}"><span><span>安全</span></span></a></li>
-            <li class="end"><a href="{{URL('index/contacts')}}"><span><span>联系我们</span></span></a></li>
         </ul>
     </nav>
 </header><div class="ic">More Website Templates @ <a href="http://www.cssmoban.com/" >网页模板</a>!</div>

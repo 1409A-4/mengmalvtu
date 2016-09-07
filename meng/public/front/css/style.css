@@ -162,12 +162,12 @@ a.jqTransformSelectOpen {display:block;position:absolute;top:0px;right:0px;width
 #form_3 .input, #form_3 .input1, #form_3 .input2 {background:#fff;border:1px solid #e5e5e5;font:12px Arial, Helvetica, sans-serif;color:#7f7f7f;float:left;padding:2px 7px;height:14px;width:112px !important}
 #form_3 .input1 {width:65px !important}
 #form_3 .input2 {width:31px !important;margin-left:5px}
-#form_3 .jqTransformSelectWrapper {float:left;width:128px !important}
-#form_3 .jqTransformSelectWrapper span {float:left;width:119px !important}
+/*#form_3 .jqTransformSelectWrapper {float:left;width:128px !important}*/
+/*#form_3 .jqTransformSelectWrapper span {float:left;width:119px !important}*/
 #form_3 .pad_left1 {padding-left:32px}
 #form_3 .select1 {height:30px}
-#form_3 .select1 .jqTransformSelectWrapper {float:left;width:221px !important}
-#form_3 .select1 .jqTransformSelectWrapper span {float:left;width:212px !important}
+/*#form_3 .select1 .jqTransformSelectWrapper {float:left;width:221px !important}*/
+/*#form_3 .select1 .jqTransformSelectWrapper span {float:left;width:212px !important}*/
 #form_3 .right.relative {margin-top:9px;margin-right:32px}
 #form_4 {padding-top:1px;padding-bottom:19px}
 #form_4 .right.relative {margin-top:9px;margin-right:32px}

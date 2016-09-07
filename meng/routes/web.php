@@ -46,21 +46,6 @@ Route::group(['prefix' => 'admin','middleware'=>'login'],function () {
     Route::post('goodsedit', 'Admin\GoodsController@GoodsEdit');//商品编辑
     Route::get('goodsdel', 'Admin\GoodsController@GoodsDel');//商品删除
 });
-Route::get('index/contacts','Index\IndexController@contacts');//前台客服  *联系我们
-Route::get('index/offers','Index\IndexController@offers');//前台优惠
-Route::get('index/book','Index\IndexController@book');//前台预约
-Route::get('index/services','Index\IndexController@services');//前台服务
-Route::get('index/safe','Index\IndexController@safe');//前台安全
-Route::get('index/books','Index\IndexController@books');//前台登记
-
-//sphinx搜索
-Route::get('index/cesi','Index\SphinxController@cesi');//搜索sphinx
-Route::post('index/search1','Index\SphinxController@search1');//s1
-Route::post('index/search2','Index\SphinxController@search2');//s1
-
-//地区管理
-//Route::get('index/region','RegionController@region');//三级联动地区管理
-Route::post('index/getcity','Index\IndexController@getcity');//三级联动地区管理
 
 
 
