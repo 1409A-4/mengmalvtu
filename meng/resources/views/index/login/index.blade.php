@@ -47,7 +47,7 @@
 
         <div>  <button type="button" class="">还有没有账号？</button></div>
         <br><p style="font-size: 20px;color: #ff4a4d">使用以下帐号直接登录</p>
-        <br><span id="hzy_fast_login"></span>
+        <br><a href="http://123.56.88.15/yanan/demo/index.php"><img src="/images/weixin.png" style="width: 32px;height: 32px" alt=""></a><span id="hzy_fast_login"></span>
     </a>
 </div>
 {{--</div>--}}

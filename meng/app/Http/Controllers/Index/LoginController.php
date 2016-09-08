@@ -11,6 +11,7 @@ use Mail;
 use App\libs\Vcode;
 use App\libs\Open51094;
 use App\Model\Index\User;
+use SphinxClient;
 class LoginController extends Controller{
 
     /*
@@ -41,7 +42,7 @@ class LoginController extends Controller{
             'confirm_password' => "required",
             'phone_number' => "required | unique:user,uphone",
             'email' => "required | unique:user,uemail",
-           
+
         ];
         $message = [
             'username.required' => '账户不能为空！',
@@ -68,6 +69,7 @@ class LoginController extends Controller{
                         $arr['uphone']=$data['phone_number'];
                         $arr['ubtime']=date('Y-m-d H:i:s');
                         $arr['uip']=$_SERVER['REMOTE_ADDR'];
+                        $arr['uimg']="./image/tx_img.gif";
                    // print_r($arr);die;
                    $res =  DB::table('user')->insert($arr);
                     if($res){
@@ -125,7 +127,7 @@ class LoginController extends Controller{
                 $arr['uname']=$data['username'];
                 $arr['upwd'] = md5($data['password']);
                 $bool=User::where($arr)->first();
-                session(['uid'=>$bool->uid,'uname'=>$bool->uname], time()+900);
+                session(['id'=>$bool->uid,'name'=>$bool->uname], time()+900);
               /*  $value = $request->session()->get('uid');
                 var_dump($value);die;*/
                 return redirect::to('/');
@@ -153,17 +155,18 @@ class LoginController extends Controller{
         $data['uip']=$_SERVER['REMOTE_ADDR'];
 
         //判断用户是否登录过
-        $re = DB::table('third')->where('uname',$data['uname'])->first();
+        //$re = DB::table('third')->where('uname',$data['uname'])->first();
+        $re = DB::table('user')->where('uniq',$data['uniq'])->first();
         if($re){
            // session(['uid'=>$re->id,'uname'=>$re->uname], time()+900);
-            \Request::session()->put('uname',$re['uname']);
+            \Request::session()->put('name',$re['uname']);
            // echo \Request::session()->get('uname');die;
             return redirect::to('/');
         }else{
-
-            $res =  DB::table('third')->insert($data);
+            //$res =  DB::table('third')->insert($data);
+            $res =  DB::table('user')->insert($data);
             if($res){
-                session(['uid'=>$res->id,'uname'=>$res->uname] ,time()+900);
+                session(['id'=>$res->id,'name'=>$res->uname] ,time()+900);
                 return redirect::to('/');
             }else{
                 echo "window.location.href = document.referrer";
@@ -179,13 +182,12 @@ class LoginController extends Controller{
     }
     
     /*
-     * 
      * 用户中心
      * 
      * */
     
     public function usercenter(){
-        $name =\Request::session()->get('uname');
+        $name =\Request::session()->get('name');
 
         $arr = DB::table('user')->where('uname',$name)->first();
 
@@ -205,23 +207,79 @@ class LoginController extends Controller{
       //  print_r($arr);die;
         return view('index.login.center',$arr);
     }
+    /*
+     *  微信登录
+     * 
+     * */
+    public function weixin(Request $request){
+       $appid = $request->get('user');
+        $re = DB::table('user')->where('uniq',$appid)->first();
+       // var_dump($appid);
+        if($re){
+            \Request::session()->put('name',$re['uname']);
+            return redirect::to('index/login');
+        }
+      return view('index.login.reweixin',compact('appid'));
+    }
     
-   /* public function weixin(){
-        //-------配置
-        $AppID = 'wx3b602e0a423d3723';
-        $AppSecret = 'd324a1529a7f0cd77f9b72fa3b309d38';
-        $callback  =  'www.yanan.com/index/login'; //回调地址
-        //微信登录
-        session_start();
-        //-------生成唯一随机串防CSRF攻击
-        $state  = md5(uniqid(rand(), TRUE));
+    /*
+     *  微信 注册
+     * 
+     * */
+    public function RegisWeixin(Request $request)
+    {
+        $data = $request->except('_token');
+        $rules = [
+            'username' => 'required |unique:user,uname',
+            'password' => 'required',
+            'confirm_password' => "required",
+            'phone_number' => "required | unique:user,uphone",
 
-        $_SESSION["wx_state"]    =   $state; //存到SESSION
-        $callback = urlencode($this->callback);
-        $wxurl = "https://open.weixin.qq.com/connect/qrconnect?appid=".$this->AppID."&redirect_uri={$callback}&response_type=code&scope=snsapi_login&state={$state}#wechat_redirect";
-        header("Location: $wxurl");
+        ];
+        $message = [
+            'username.required' => '账户不能为空！',
+            'username.unique' => '账户已存在！',
+            'password.required' => '密码不能为空！',
+            'confirm_password.required' => '确认密码不能为空！',
+            'confirm_password.confirmed' => '确认密码不一致！',
+            'phone_number.required' => '手机号码不能为空！',
+            'phone_number.unique' => '手机号码已存在！',
+
+        ];
+        $validator = Validator::make($data, $rules, $message);
+        if ($validator->passes()) {
+            //print_r($data);die;
+
+            //判断密码是否一致
+            if ($data['password'] == $data['confirm_password']) {
+                $arr['uname'] = $data['username'];
+                $arr['upwd'] = md5($data['password']);
+
+                $arr['uphone'] = $data['phone_number'];
+                $arr['created_at'] = date('Y-m-d H:i:s');
+                $arr['uip'] = $_SERVER['REMOTE_ADDR'];
+                $arr['uimg'] = "./image/tx_img.gif";
+                $arr['uniq']= $data['appid'];
+                $arr['from']='weixin';
+                 //print_r($arr);die;
+                $res = DB::table('user')->insert($arr);
+                if ($res) {
+                    \Request::session()->put('name',$res['uname']);
+                    return redirect::to('index/login');
+                } else {
+                    echo "window.location.href = document.referrer";
+                }
+
+            } else {
+                return back()->with(['message' => "两次输入密码不一致！"]);
+
+            }
+        }else{
+
+            return back()->withErrors($validator);
+        }
+    }
 
 
-    }*/
 
 }

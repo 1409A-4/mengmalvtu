@@ -157,9 +157,9 @@
 						</div>	
 					</article>
 					<div id="slider">
-						<img src="./public/index/images/banner1.jpg" alt="">
-						<img src="./public/index/images/banner2.jpg" alt="">
-						<img src="./public/index/images/banner3.jpg" alt="">
+						<img src="./front/images/banner1.jpg" alt="">
+						<img src="./front/images/banner2.jpg" alt="">
+						<img src="./front/images/banner3.jpg" alt="">
 					</div>
 				</div>
 		<div class="wrapper pad1">
@@ -217,12 +217,12 @@
 						<h3>About Our Airlines<span>Template created  team</span></h3>
 						<div class="wrapper">
 							<article class="cols">
-								<figure><img src="images/page1_img1.jpg" alt="" class="pad_bot2"></figure>
+								<figure><img src="front/images/page1_img1.jpg" alt="" class="pad_bot2"></figure>
 								<p class="pad_bot1"><strong>Airlines is one of <a href="http://blog.templatemonster.com/free-website-templates/" target="_blank">free website templates</a> created  team.</strong></p>
 								<p>This website template is optimized for 1024X768 screen resolution. It is also XHTML &amp; CSS valid. This website template has several pages: <a href="{{URL('index')}}">About</a>, <a href="{{URL('offers')}}">Offers</a>, <a href="{{URL('book')}}">Book</a>, <a href="{{URL('services')}}">Services</a>, <a href="{{URL('safe')}}">Safety</a>, <a href="{{URL('contacts')}}">Contacts</a>.</p>
 							</article>
 							<article class="cols pad_left1">
-								<figure><img src="images/page1_img2.jpg" alt="" class="pad_bot2"></figure>
+								<figure><img src="front/images/page1_img2.jpg" alt="" class="pad_bot2"></figure>
 								<p class="pad_bot1"><strong>This <a href="http://blog.templatemonster.com/2011/05/09/free-website-template-airlines/" target="_blank">Airlines Template</a> goes with two packages.</strong></p>
 								<p>With PSD source files and without them. PSD source files are available for free for the registered members of Templates.com. The basic package (without PSD source files) is available for anyone without registration).</p>
 							</article>
@@ -236,12 +236,12 @@
 			<footer>
 				<div class="wrapper">
 					<ul id="icons">
-						<li><a href="#" class="normaltip" title="Facebook"><img src="./public/index/images/icon1.jpg" alt=""></a></li>
-						<li><a href="#" class="normaltip" title="Delicious"><img src="./public/index/images/icon2.jpg" alt=""></a></li>
-						<li><a href="#" class="normaltip" title="Stumble Upon"><img src="./public/index/images/icon3.jpg" alt=""></a></li>
-						<li><a href="#" class="normaltip" title="Twitter"><img src="./public/index/images/icon4.jpg" alt=""></a></li>
-						<li><a href="#" class="normaltip" title="Linkedin"><img src="./public/index/images/icon5.jpg" alt=""></a></li>
-						<li><a href="#" class="normaltip" title="Reddit"><img src="./public/index/images/icon6.jpg" alt=""></a></li>
+						<li><a href="#" class="normaltip" title="Facebook"><img src="./front/images/icon1.jpg" alt=""></a></li>
+						<li><a href="#" class="normaltip" title="Delicious"><img src="./front/images/icon2.jpg" alt=""></a></li>
+						<li><a href="#" class="normaltip" title="Stumble Upon"><img src="./front/images/icon3.jpg" alt=""></a></li>
+						<li><a href="#" class="normaltip" title="Twitter"><img src="./front/images/icon4.jpg" alt=""></a></li>
+						<li><a href="#" class="normaltip" title="Linkedin"><img src="./front/images/icon5.jpg" alt=""></a></li>
+						<li><a href="#" class="normaltip" title="Reddit"><img src="./front/images/icon6.jpg" alt=""></a></li>
 					</ul>
 					<div class="links">
 						Collect from <a rel="nofollow" href="http://www.cssmoban.com/" target="_blank">网页模板</a> | <br>

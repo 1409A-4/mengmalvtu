@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Admin' => $baseDir . '/database/migrations/2016_08_31_061334_admin.php',
     'AdminRole' => $baseDir . '/database/migrations/2016_08_31_061411_admin_role.php',
+    'App\\libs\\Vcode' => $baseDir . '/app/libs/Vcode.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateSessionsTable' => $baseDir . '/database/migrations/2016_08_31_054833_create_sessions_table.php',
     'CreateThirdTable' => $baseDir . '/database/migrations/2016_09_03_024818_create_third_table.php',
@@ -542,10 +543,12 @@ return array(
     'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => $vendorDir . '/sebastian/recursion-context/src/InvalidArgumentException.php',
     'SebastianBergmann\\ResourceOperations\\ResourceOperations' => $vendorDir . '/sebastian/resource-operations/src/ResourceOperations.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
+    'SphinxClient' => $baseDir . '/app/libs/sphinxapi.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
     'Tool' => $baseDir . '/app/class/Tool.php',
     'User' => $baseDir . '/database/migrations/2016_08_31_062200_user.php',
     'Verify' => $baseDir . '/app/class/Verify.php',
     'Z' => $baseDir . '/app/class/Z.php',
+    'app\\libs\\open51094' => $baseDir . '/app/libs/open51094.php',
 );

@@ -4,10 +4,10 @@
         <h1><a href="{{URL('/')}}" id="logo">Air lines</a></h1>
         <span id="slogan">Fast, Frequent &amp; Safe Flights</span>
         <nav id="top_nav">
-            @if(Request::session()->has('uname'))
+            @if(Request::session()->has('name'))
 
                 <ul>
-                    <li><a href="" class="nav1"><?php echo Request::session()->get('uname')?></a></li>
+                    <li><a href="" class="nav1"><?php echo Request::session()->get('name')?></a></li>
                     <li><a href="{{URL('index/center')}}" class="nav2">用户中心</a></li>
                     <li><a href="{{URL('login/loginout')}}" class="nav3">退出</a></li>
                 </ul>

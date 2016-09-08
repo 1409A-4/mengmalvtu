@@ -279,6 +279,7 @@ class ComposerStaticInit7fb81aceb8772aaaa410b0de365dec8c
     public static $classMap = array (
         'Admin' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_061334_admin.php',
         'AdminRole' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_061411_admin_role.php',
+        'App\\libs\\Vcode' => __DIR__ . '/../..' . '/app/libs/Vcode.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateSessionsTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_054833_create_sessions_table.php',
         'CreateThirdTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_03_024818_create_third_table.php',
@@ -813,12 +814,14 @@ class ComposerStaticInit7fb81aceb8772aaaa410b0de365dec8c
         'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/recursion-context/src/InvalidArgumentException.php',
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'SphinxClient' => __DIR__ . '/../..' . '/app/libs/sphinxapi.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
         'Tool' => __DIR__ . '/../..' . '/app/class/Tool.php',
         'User' => __DIR__ . '/../..' . '/database/migrations/2016_08_31_062200_user.php',
         'Verify' => __DIR__ . '/../..' . '/app/class/Verify.php',
         'Z' => __DIR__ . '/../..' . '/app/class/Z.php',
+        'app\\libs\\open51094' => __DIR__ . '/../..' . '/app/libs/open51094.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

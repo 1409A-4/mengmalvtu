@@ -37,7 +37,8 @@ Route::get('index/books','Index\IndexController@books');
 Route::get('index/login','Index\LoginController@index');//登录页面
 Route::post('login/loginin','Index\LoginController@loginin');//登录验证
 Route::get('login/third','Index\LoginController@thirdlogin');//第三方登录
-Route::get('login/wei','Index\LoginController@weixin');//第三方登录
+Route::get('login/wei','Index\LoginController@weixin');//微信登录
+Route::post('login/regiswei','Index\LoginController@RegisWeixin');//微信注册
 
 //Route::get('index/register','Index\LoginController@register');
 //Route::get('index/send','Index\LoginController@send');
